@@ -3,10 +3,13 @@
   "authors": [
     "Josh Medeski"
   ],
-  "main": "scss/foundation-icon-buttons.scss",
+  "main": [
+    "scss/foundation-icon-buttons.scss"
+  ],
   "keywords": [
     "foundation",
-    "font awesome"
+    "font-awesome",
+    "fontawesome"
     "buttons",
     "sass",
     "scss"
@@ -15,10 +18,6 @@
     "foundation": "~5.5.2",
     "fontawesome": "~4.3.0",
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/joshmedeski/foundation-font-awesome-buttons.git"
-  },
   "license": "MIT",
-  "homepage": "https://github.com/joshmedeski/foundation-font-awesome-buttons"
+  "homepage": "https://github.com/joshmedeski/foundation-font-awesome-buttons",
 }
