@@ -1,44 +1,13 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Foundation Icon Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// @mixin button-icon($position, $icon)
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// We use this mixin to create the button icon and appropriate spacing.
-//
-// $icon      - Font Awesome icon glyph. Options: Font Awesome name (i.e. right-arrow)
-// $position  - Position of the icon from the text. Options: before or after
-// $size      - Size of the button. Options: tny, sml, med or lrg. Default: med
-// $is-expand - Boolean for if button is expanded. Default: false
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-@mixin button-icon-position($position) {}
-
-@mixin button-icon($icon) {
-  &:before {
-    @include fa-icon;
-    content: $icon;
-    position: absolute;
-    z-index: 2;
-  }
-}
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// Class Names
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @if $include-html-button-classes {
     // Default styles applied outside of media query
     button,
     .button {
-
-      &.arrow {
-        @include button-icon($fa-var-arrow-right);
-      }
-
-      &.user {
-        @include button-icon($fa-var-user);
-      }
+      position: relative;
+      overflow: hidden;
 
       &.#{$fa-css-prefix}-before,
       &.#{$fa-css-prefix}-after {
@@ -49,13 +18,34 @@
           position: absolute;
           z-index: 2;
         }
+
+        &:after {
+          background: rgba(255, 255, 255, .1);
+          content: '';
+          height: 200%;
+          position: absolute;
+          top: 0;
+          transition: all .3s;
+          z-index: 1;
+          &.tiny   { width: ($button-tny * 3.6); }
+          &.small  { width: ($button-sml * 3.6); }
+          width: ($button-med * 3.6);
+          &.large  { width: ($button-lrg * 3.6); }
+        }
+
+        &:hover {
+          &:after {
+            transform: rotate(0deg) !important;
+            width: 100% !important;
+          }
+        }
       }
 
       &.#{$fa-css-prefix}-before {
-        &.tiny   { padding-left: ($button-tny * 2) + $button-tny; }
-        &.small  { padding-left: ($button-sml * 2) + $button-sml; }
-        padding-left: ($button-med * 2) + $button-med;
-        &.large  { padding-left: ($button-lrg * 2) + $button-lrg; }
+        &.tiny   { padding-left: ($button-tny * 4); }
+        &.small  { padding-left: ($button-sml * 4); }
+        padding-left: ($button-med * 4);
+        &.large  { padding-left: ($button-lrg * 4); }
 
         &:before {
           &.tiny   { left: $button-tny; }
@@ -63,19 +53,31 @@
           left: $button-med;
           &.large  { left: $button-lrg; }
         }
+
+        &:after {
+          left: 0;
+          transform: rotate(-10deg);
+          transform-origin: left;
+        }
       }
 
       &.#{$fa-css-prefix}-after {
-        &.tiny   { padding-right: ($button-tny * 2) + $button-tny; }
-        &.small  { padding-right: ($button-sml * 2) + $button-sml; }
-        padding-right: ($button-med * 2) + $button-med;
-        &.large  { padding-right: ($button-lrg * 2) + $button-lrg; }
+        &.tiny   { padding-right: ($button-tny * 4); }
+        &.small  { padding-right: ($button-sml * 4); }
+        padding-right: ($button-med * 4);
+        &.large  { padding-right: ($button-lrg * 4); }
 
         &:before {
           &.tiny   { right: $button-tny; }
           &.small  { right: $button-sml; }
           right: $button-med;
           &.large  { right: $button-lrg; }
+        }
+
+        &:after {
+          right: 0;
+          transform: rotate(10deg);
+          transform-origin: right;
         }
       }
 
