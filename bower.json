@@ -1,0 +1,20 @@
+{
+  "name": "foundation-icon-buttons",
+  "version": "0.0.1",
+  "authors": [
+    "Josh Medeski <josh.medeski@gmail.com>"
+  ],
+  "main": "scss/_foundation-icon-buttons.scss",
+  "keywords": [
+    "foundation",
+    "buttons",
+    "sass",
+    "scss"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "fontawesome": "~4.3.0",
+  },
+  "license": "MIT",
+  "homepage": "foundation-button-icons.github.io"
+}

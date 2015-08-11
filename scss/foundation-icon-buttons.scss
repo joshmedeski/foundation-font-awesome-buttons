@@ -1,0 +1,83 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Foundation Icon Buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// @mixin button-icon($position, $icon)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// We use this mixin to create the button icon and appropriate spacing.
+//
+// $icon      - Font Awesome icon glyph. Options: Font Awesome name (i.e. right-arrow)
+// $position  - Position of the icon from the text. Options: before or after
+// $size      - Size of the button. Options: tny, sml, med or lrg. Default: med
+// $is-expand - Boolean for if button is expanded. Default: false
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin button-icon-position($position) {}
+
+@mixin button-icon($icon) {
+  &:before {
+    @include fa-icon;
+    content: $icon;
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Class Names
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@if $include-html-button-classes {
+    // Default styles applied outside of media query
+    button,
+    .button {
+
+      &.arrow {
+        @include button-icon($fa-var-arrow-right);
+      }
+
+      &.user {
+        @include button-icon($fa-var-user);
+      }
+
+      &.#{$fa-css-prefix}-before,
+      &.#{$fa-css-prefix}-after {
+        &:before {
+          @include fa-icon;
+          line-height: 1.3;
+          text-align: center;
+          position: absolute;
+          z-index: 2;
+        }
+      }
+
+      &.#{$fa-css-prefix}-before {
+        &.tiny   { padding-left: ($button-tny * 2) + $button-tny; }
+        &.small  { padding-left: ($button-sml * 2) + $button-sml; }
+        padding-left: ($button-med * 2) + $button-med;
+        &.large  { padding-left: ($button-lrg * 2) + $button-lrg; }
+
+        &:before {
+          &.tiny   { left: $button-tny; }
+          &.small  { left: $button-sml; }
+          left: $button-med;
+          &.large  { left: $button-lrg; }
+        }
+      }
+
+      &.#{$fa-css-prefix}-after {
+        &.tiny   { padding-right: ($button-tny * 2) + $button-tny; }
+        &.small  { padding-right: ($button-sml * 2) + $button-sml; }
+        padding-right: ($button-med * 2) + $button-med;
+        &.large  { padding-right: ($button-lrg * 2) + $button-lrg; }
+
+        &:before {
+          &.tiny   { right: $button-tny; }
+          &.small  { right: $button-sml; }
+          right: $button-med;
+          &.large  { right: $button-lrg; }
+        }
+      }
+
+    }
+  }
