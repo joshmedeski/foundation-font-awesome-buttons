@@ -16,8 +16,8 @@
   ],
   "dependencies": {
     "foundation": "~5.5.2",
-    "fontawesome": "~4.3.0",
+    "fontawesome": "~4.3.0"
   },
   "license": "MIT",
-  "homepage": "https://github.com/joshmedeski/foundation-font-awesome-buttons",
+  "homepage": "https://github.com/joshmedeski/foundation-font-awesome-buttons"
 }
