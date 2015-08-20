@@ -2,22 +2,73 @@
 // Foundation Icon Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Settings
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$ffab-css-prefix: 'ffab' !default;
+$ffab-angle: 15 !default;
+$ffab-animation-speed: .3s !default;
+$ffab-animation-behavior: 'remove' !default; // options: cover or remove
+$ffab-border-radius: 'none' !default; // options: none, radius or round
+$ffab-is-uppercase: false !default;
+$ffab-has-shadow: false !default;
+$ffab-shadow: 0 -3px 0 rgba(0, 0, 0, .1) inset !default;
+
 @if $include-html-button-classes {
     // Default styles applied outside of media query
     button,
     .button {
-      position: relative;
       overflow: hidden;
+      position: relative;
 
-      &.#{$fa-css-prefix}-before,
-      &.#{$fa-css-prefix}-after {
+      @if $ffab-has-shadow == true {
+        box-shadow: $ffab-shadow;
+      }
+
+      @if $ffab-border-radius == 'radius' {
+        border-radius: $button-radius;
+      } @if $ffab-border-radius == 'round' {
+        border-radius: $button-round;
+      }
+
+      @if $ffab-is-uppercase == true {
+        text-transform: uppercase;
+      }
+
+      &.#{$ffab-css-prefix}-before,
+      &.#{$ffab-css-prefix}-after {
         &:before {
           @include fa-icon;
-          line-height: 1.3;
-          text-align: center;
+          line-height: 1.4;
           position: absolute;
           z-index: 2;
         }
+
+        &.#{$ffab-css-prefix}-spin:before {
+          @extend .fa-spin;
+        }
+        &.#{$ffab-css-prefix}-pulse:before {
+          @extend .fa-pulse;
+        }
+
+        &.#{$ffab-css-prefix}-rotate-90:before {
+          @extend .fa-rotate-90;
+        }
+        &.#{$ffab-css-prefix}-rotate-180:before {
+          @extend .fa-rotate-180;
+        }
+        &.#{$ffab-css-prefix}-rotate-270:before {
+          @extend .fa-rotate-270;
+        }
+        &.#{$ffab-css-prefix}-flip-horizontal:before {
+          @extend .fa-flip-horizontal;
+        }
+        &.#{$ffab-css-prefix}-flip-vertical:before {
+          @extend .fa-flip-vertical;
+        }
+
+
+
 
         &:after {
           background: rgba(255, 255, 255, .1);
@@ -25,58 +76,59 @@
           height: 200%;
           position: absolute;
           top: 0;
-          transition: all .3s;
+          transition: all $ffab-animation-speed;
           z-index: 1;
-          &.tiny   { width: ($button-tny * 3.6); }
-          &.small  { width: ($button-sml * 3.6); }
-          width: ($button-med * 3.6);
-          &.large  { width: ($button-lrg * 3.6); }
         }
 
-        &:hover {
+        &:after        { width: ($button-med * 3) + $button-font-med + rem-calc($ffab-angle); }
+        &.tiny:after   { width: ($button-tny * 3) + $button-font-tny + rem-calc($ffab-angle); }
+        &.small:after  { width: ($button-sml * 3) + $button-font-sml + rem-calc($ffab-angle); }
+        &.large:after  { width: ($button-lrg * 3) + $button-font-lrg + rem-calc($ffab-angle); }
+
+        &:hover:not(.disabled) {
           &:after {
             transform: rotate(0deg) !important;
-            width: 100% !important;
+            @if $ffab-animation-behavior == 'cover' {
+              width: 100% !important;
+            } @else if $ffab-animation-behavior == 'remove' {
+              width: 0% !important;
+            }
           }
         }
       }
 
-      &.#{$fa-css-prefix}-before {
-        &.tiny   { padding-left: ($button-tny * 4); }
-        &.small  { padding-left: ($button-sml * 4); }
-        padding-left: ($button-med * 4);
-        &.large  { padding-left: ($button-lrg * 4); }
+      &.#{$ffab-css-prefix}-before {
+                   padding-left: ($button-med * 4) + $button-font-med + rem-calc($ffab-angle);
+        &.tiny   { padding-left: ($button-tny * 4) + $button-font-tny + rem-calc($ffab-angle); }
+        &.small  { padding-left: ($button-sml * 4) + $button-font-sml + rem-calc($ffab-angle); }
+        &.large  { padding-left: ($button-lrg * 4) + $button-font-lrg + rem-calc($ffab-angle); }
 
-        &:before {
-          &.tiny   { left: $button-tny; }
-          &.small  { left: $button-sml; }
-          left: $button-med;
-          &.large  { left: $button-lrg; }
-        }
+        &:before        { left: $button-med * 2; }
+        &.tiny:before   { left: $button-tny * 2; }
+        &.small:before  { left: $button-sml * 2; }
+        &.large:before  { left: $button-lrg * 2; }
 
         &:after {
           left: 0;
-          transform: rotate(-10deg);
+          transform: rotate(-#{$ffab-angle}deg);
           transform-origin: left;
         }
       }
 
-      &.#{$fa-css-prefix}-after {
-        &.tiny   { padding-right: ($button-tny * 4); }
-        &.small  { padding-right: ($button-sml * 4); }
-        padding-right: ($button-med * 4);
-        &.large  { padding-right: ($button-lrg * 4); }
+      &.#{$ffab-css-prefix}-after {
+                   padding-right: ($button-med * 4) + $button-font-med + rem-calc($ffab-angle);
+        &.tiny   { padding-right: ($button-tny * 4) + $button-font-tny + rem-calc($ffab-angle); }
+        &.small  { padding-right: ($button-sml * 4) + $button-font-sml + rem-calc($ffab-angle); }
+        &.large  { padding-right: ($button-lrg * 4) + $button-font-lrg + rem-calc($ffab-angle); }
 
-        &:before {
-          &.tiny   { right: $button-tny; }
-          &.small  { right: $button-sml; }
-          right: $button-med;
-          &.large  { right: $button-lrg; }
-        }
+        &:before        { right: $button-med * 2; }
+        &.tiny:before   { right: $button-tny * 2; }
+        &.small:before  { right: $button-sml * 2; }
+        &.large:before  { right: $button-lrg * 2; }
 
         &:after {
           right: 0;
-          transform: rotate(10deg);
+          transform: rotate(#{$ffab-angle}deg);
           transform-origin: right;
         }
       }
