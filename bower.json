@@ -1,23 +1,22 @@
 {
-  "name": "foundation-font-awesome-buttons",
+  "name": "foundation-sites-template",
+  "version": "0.0.1",
   "authors": [
-    "Josh Medeski"
+    "ZURB <foundation@zurb.com>"
   ],
-  "main": [
-    "scss/ffab.scss"
-  ],
-  "keywords": [
-    "foundation",
-    "font-awesome",
-    "fontawesome",
-    "buttons",
-    "sass",
-    "scss"
-  ],
-  "dependencies": {
-    "foundation": "~5.5.2",
-    "fontawesome": "~4.4.0"
-  },
+  "description": "Basic template for a new Foundation for Sites project.",
+  "main": "index.html",
   "license": "MIT",
-  "homepage": "https://github.com/joshmedeski/foundation-font-awesome-buttons"
+  "homepage": "http://foundation.zurb.com",
+  "dependencies": {
+    "foundation-font-awesome-buttons": "~2.0.0",
+    "highlightjs": "~8.7.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

@@ -1,0 +1,10 @@
+@import 'settings';
+@import 'foundation';
+$fa-font-path: '../bower_components/fontawesome/fonts/';
+@import 'font-awesome';
+@import 'ffab';
+
+section {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    margin-bottom: 40px;
+}
