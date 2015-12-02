@@ -1,6 +1,6 @@
 # Foundation Font Awesome Buttons
-![Foundation Version Supported Version](https://img.shields.io/badge/Foundation-v5.5.2-blue.svg?style=flat-square)
-![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v4.4.0-green.svg?style=flat-square)
+![Foundation Version Supported Version](https://img.shields.io/badge/Foundation-v6.0.4-blue.svg?style=flat-square)
+![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v4.5.0-green.svg?style=flat-square)
 
 Foundation Icon Buttons combines the Zurb's Foundation with the Font Awesome project. Building stylish icon buttons is quick and easy.
 
@@ -22,7 +22,29 @@ Your new button will look something like this:
 <a href="#" class="small info button [ ffab-after fa-arrow-right ]">Text</a>
 ```
 
-*Note: The brackets [ ] are not required but make for easier legibility.*
+*Note: The brackets __[ ]__ are not required but make for easier legibility.*
+
+
+## How to Install
+
+To get started, you have to include install the Bower component. The supported versions of Foundation and Font Awesome are included as dependencies so you only need to install this bower dependencie :)
+
+Run the following command in the root folder of your project:
+
+```bash
+bower install foundation-font-awesome-buttons --save-dev
+```
+
+Then you have to include the sass files in your main stylesheet (after the Foundation and Font Awesome files):
+
+```scss
+// @imports the sass code and mixins (make sure the path is correct!)
+@include 'foundation-font-awesome-buttons';
+
+// Outputs the ffab css class names
+@include foundation-font-awesome-buttons;
+```
+
 
 ## Settings
 
@@ -30,17 +52,17 @@ There are a set of Scss variables that can help make these buttons your own. I r
 
 ```scss
 // Foundation Font Awesome Buttons
-// $ffab-css-prefix: 'ffab'; // default: ffab
-// $ffab-angle: 15; // degrees
-// $ffab-animation-speed: .3s;
-// $ffab-animation-behavior: cover; // options: cover or remove (default: remove)
-// $ffab-border-radius: radius; // options: none, radius or round (default: none)
-// $ffab-is-uppercase: true; // default false
-// $ffab-has-shadow: true; // default false
-// $ffab-shadow: 0 -3px 0 rgba(0, 0, 0, .1) inset;
+$ffab-css-prefix: 'ffab';
+$ffab-angle: 15;
+$ffab-animation-speed: .3s;
+$ffab-animation-behavior: 'remove';
+$ffab-overlay: rgba(255, 255, 255, .1);
+$ffab-has-shadow: true;
+$ffab-shadow-color: rgba(0, 0, 0, .1);
+$ffab-shadow-size: 10;
 ```
 
-## Helper Classes
+## Utility Classes
 
 Many of the helper classes Font Awesome offers have been ported to this project.
 
