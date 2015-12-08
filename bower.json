@@ -15,7 +15,7 @@
     "scss"
   ],
   "dependencies": {
-    "foundation-sites": "~6.0.4",
+    "foundation-sites": "~6.0.5",
     "fontawesome": "~4.5.0"
   },
   "license": "MIT",
