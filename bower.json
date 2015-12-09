@@ -9,8 +9,8 @@
   "license": "MIT",
   "homepage": "http://foundation.zurb.com",
   "dependencies": {
-    "foundation-font-awesome-buttons": "~2.0.0",
-    "highlightjs": "~8.7.0"
+    "foundation-font-awesome-buttons": "~3.0.1",
+    "highlightjs": "~8.9.1"
   },
   "ignore": [
   ]

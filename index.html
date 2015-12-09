@@ -5,9 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation Font Awesome Buttons</title>
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="bower_components/highlightjs/styles/github.css" />
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="/dist/github.css" />
+    <link rel="stylesheet" href="/dist/app.css" />
 </head>
 
 <body>
@@ -180,14 +179,13 @@
                 </pre>
                 <p>To initiate this project, load all required stylesheets in the following order:</p>
                 <pre>
-                <code>// Dependencies
-@import &#039;settings&#039;; // Your settings file
-@import &#039;bower_components/foundation/scss/foundation&#039;;
-$fa-font-path: &#039;bower_components/fontawesome/fonts/&#039;;
-@import &#039;bower_components/fontawesome/scss/font-awesome&#039;;
-@import &#039;bower_components/foundation-font-awesome-buttons/scss/ffab&#039;;
+                <code>@import &#039;settings&#039;;
+@import &#039;foundation&#039;;
+@import &#039;font-awesome&#039;;
+@import &#039;foundation-font-awesome-buttons&#039;;
 
-// Your styles here
+@import foundation-everything;
+@import foundation-font-awesome-buttons;
                     </code>
                 </pre>
             </section>
@@ -204,6 +202,14 @@ $ffab-border-radius: radius; // options: none, radius or round (default: none)
 $ffab-is-uppercase: true; // default false
 $ffab-has-shadow: true; // default false
 $ffab-shadow: 0 -3px 0 rgba(0, 0, 0, .1) inset;
+$ffab-css-prefix: 'ffab';
+$ffab-angle: 15;
+$ffab-animation-speed: .3s;
+$ffab-animation-behavior: 'remove';
+$ffab-overlay: rgba(255, 255, 255, .1);
+$ffab-has-shadow: true;
+$ffab-shadow-color: rgba(0, 0, 0, .1);
+$ffab-shadow-size: 10;
                     </code>
                 </pre>
             </section>
@@ -220,10 +226,7 @@ $ffab-shadow: 0 -3px 0 rgba(0, 0, 0, .1) inset;
             </footer>
         </div>
     </div>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="bower_components/highlightjs/highlight.pack.min.js"></script>
+    <script src="/dist/highlight.pack.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
