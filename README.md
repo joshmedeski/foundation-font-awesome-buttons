@@ -39,7 +39,7 @@ Then you have to include the sass files in your main stylesheet (after the Found
 
 ```scss
 // @imports the sass code and mixins (make sure the path is correct!)
-@include 'foundation-font-awesome-buttons';
+@import 'foundation-font-awesome-buttons';
 
 // Outputs the ffab css class names
 @include foundation-font-awesome-buttons;
