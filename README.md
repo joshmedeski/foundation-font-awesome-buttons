@@ -1,5 +1,5 @@
 # Foundation Font Awesome Buttons
-![Foundation Version Supported Version](https://img.shields.io/badge/Foundation-v6.1.2-blue.svg?style=flat-square)
+![Foundation Version Supported Version](https://img.shields.io/badge/Foundation-v6.2.0-blue.svg?style=flat-square)
 ![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v4.5.0-green.svg?style=flat-square)
 
 Foundation Icon Buttons combines the Zurb's Foundation with the Font Awesome project. Building stylish icon buttons is quick and easy.
