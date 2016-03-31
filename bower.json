@@ -6,6 +6,9 @@
   "main": [
     "scss/foundation-font-awesome-buttons.scss"
   ],
+  "ignore": [
+    ".gitignore"
+  ],
   "keywords": [
     "foundation",
     "font-awesome",
