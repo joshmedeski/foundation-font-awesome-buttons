@@ -4,18 +4,19 @@
     "Josh Medeski"
   ],
   "main": [
-    "scss/ffab.scss"
+    "scss/foundation-font-awesome-buttons.scss"
   ],
   "keywords": [
     "foundation",
     "font-awesome",
     "fontawesome",
+    "button",
     "buttons",
     "sass",
     "scss"
   ],
   "dependencies": {
-    "foundation-sites": "6.1.2",
+    "foundation-sites": "6.2.0",
     "fontawesome": "4.5.0"
   },
   "license": "MIT",
