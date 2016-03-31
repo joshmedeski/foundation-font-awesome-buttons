@@ -1,0 +1,12 @@
+@charset 'utf-8';
+
+@import 'settings';
+$fa-font-path: 'demo/bower_components/fontawesome/fonts/';
+
+@import 'foundation';
+@import 'font-awesome';
+@import '../../scss/foundation-font-awesome-buttons';
+
+@include foundation-global-styles;
+@include foundation-button;
+@include foundation-font-awesome-buttons;
