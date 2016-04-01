@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 @import 'settings';
-$fa-font-path: 'demo/bower_components/fontawesome/fonts/';
+$fa-font-path: '../preview/bower_components/fontawesome/fonts';
 
 @import 'foundation';
 @import 'font-awesome';
