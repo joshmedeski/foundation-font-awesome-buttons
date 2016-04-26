@@ -41,13 +41,13 @@
   }
 
   .#{$ffab-css-prefix}:not(.before):not(.after) {
-    @include ffab-position($ffab-position-default);
+    @include ffab-position($ffab-default-position);
   }
 
   @each $size, $value in $button-sizes {
     @if $size != default {
       &.#{$size}:not(.before):not(.after) {
-        @include ffab-position($ffab-position-default, $size);
+        @include ffab-position($ffab-default-position, $size);
         @include ffab-overlay-width($size);
       }
       &.#{$size}.after {

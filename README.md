@@ -86,7 +86,7 @@ There are a set of Sass variables that can help make these buttons your own. I r
 // 37. Foundation Font Awesome Buttons
 // - - - - - - - - - - - - - - - -
 // $ffab-css-prefix: 'ffab';
-// $ffab-position-default: 'after';
+// $ffab-default-position: 'after';
 // $ffab-border-width: 0;
 // $ffab-angle: 15;
 // $ffab-transition-speed: 0.3s;
