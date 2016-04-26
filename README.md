@@ -96,6 +96,7 @@ There are a set of Sass variables that can help make these buttons your own. I r
 
 ## TODO
 
+- [ ] Update documentation with new class names and more examples
 - [ ] Add SassDocs to the entire project
 - [ ] Create a CDN CSS to easily add ffab to any project (without Sass!)
 - [ ] Create a rounded version
