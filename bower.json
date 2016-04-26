@@ -3,6 +3,11 @@
   "authors": [
     "Josh Medeski"
   ],
+  "ignore": [
+    "gulpfile.js",
+    "index.html",
+    "package.json",
+  ],
   "main": [
     "scss/foundation-font-awesome-buttons.scss"
   ],
@@ -16,8 +21,8 @@
     "scss"
   ],
   "dependencies": {
-    "foundation-sites": "6.2.0",
-    "fontawesome": "4.5.0"
+    "foundation-sites": "6.2.1",
+    "fontawesome": "4.6.1"
   },
   "license": "MIT",
   "homepage": "https://github.com/joshmedeski/foundation-font-awesome-buttons"

@@ -17,7 +17,7 @@
 @mixin ffab-transitions {
   .#{$ffab-css-prefix}:hover:not(.disabled) {
     &:not(.static)::after {
-      @include ffab-transition($ffab-animation-behavior);
+      @include ffab-transition($ffab-transition-behavior);
     }
   }
 

@@ -12,7 +12,7 @@
     @include fa-icon;
     line-height: 1;
     position: absolute;
-    transition: all $ffab-animation-speed ease-out;
+    transition: all $ffab-transition-speed;
     z-index: 2;
   }
 }

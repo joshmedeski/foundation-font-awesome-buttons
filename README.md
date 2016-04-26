@@ -1,73 +1,101 @@
 # Foundation Font Awesome Buttons
 ![Foundation Version Supported Version](https://img.shields.io/badge/Foundation-v6.2.0-blue.svg?style=flat-square)
-![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v4.5.0-green.svg?style=flat-square)
+![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v4.6.1-green.svg?style=flat-square)
 
 Foundation Icon Buttons combines the Zurb's Foundation with the Font Awesome project. Building stylish icon buttons is quick and easy.
 
 ## How to Use
 
-Here's a sample of simple foundation button.
+It's simple! Just add `ffab` and a Font Awesome class to a button
 
 ```html
-<a href="#" class="small info button">Text</a>
+<a href="#" class="button ffab fa-arrow-right">Text</a>
 ```
 
-To add an icon to the button you will need to include `ffab-before` or `ffab-after` to determine the position of the icon from the text.
+[View Docs & Examples](http://)
 
-Finally, you will need to add the Font Awesome icon class name for the icon you want (ex: `fa-arrow-right`).
+## Setup
 
-Your new button will look something like this:
-
-```html
-<a href="#" class="small info button [ ffab-after fa-arrow-right ]">Text</a>
-```
-
-*Note: The brackets __[ ]__ are not required but make for easier legibility.*
-
-
-## How to Install
-
-To get started, you have to include install the Bower component. The supported versions of Foundation and Font Awesome are included as dependencies so you only need to install this bower dependencie :)
+#### 1. Install the Bower component
 
 Run the following command in the root folder of your project:
 
 ```bash
-bower install foundation-font-awesome-buttons --save-dev
+$ bower install foundation-font-awesome-buttons --save-dev
 ```
 
-Then you have to include the sass files in your main stylesheet (after the Foundation and Font Awesome files):
+#### 2. Include in Sass
+
+Import all the project dependencies in your main Sass file:
 
 ```scss
-// @imports the sass code and mixins (make sure the path is correct!)
-@import 'foundation-font-awesome-buttons';
+@charset 'utf-8';
 
-// Outputs the ffab css class names
-@include foundation-font-awesome-buttons;
+@import 'settings';
+
+@import 'foundation';
+@import 'font-awesome';
+@import 'ffab';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-button-group;
+
+@include ffab-everything;
+```
+
+Make sure your Sass compiler knows where to find all the dependencies.
+
+Here is an example of a GulpFile.js setup using the `Gulp-Sass` `includePaths` option:
+
+```js
+var gulp = require('gulp');
+var $    = require('gulp-load-plugins')();
+
+var sassPaths = [
+  'bower_components/foundation-sites/scss',
+  'bower_components/fontawesome/scss',
+  'bower_components/foundation-font-awesome-buttons/rc',
+];
+
+gulp.task('sass', function () {
+  return gulp.src('scss/*.scss')
+    .pipe($.sass({
+      includePaths: sassPaths,
+    })
+    .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions', 'ie >= 9'],
+    }))
+    .pipe(gulp.dest('css'));
+});
+
+gulp.task('default', ['sass'], function () {
+  gulp.watch(['scss/*.scss'], ['sass']);
+});
 ```
 
 
 ## Settings
 
-There are a set of Scss variables that can help make these buttons your own. I recommend adding the following variables to your project's `_settings.scss` file (to follow the Foundation workflow).
+There are a set of Sass variables that can help make these buttons your own. I recommend adding the following variables to your project's `_settings.scss` file (to follow the Foundation workflow).
 
 ```scss
 // 37. Foundation Font Awesome Buttons
 // - - - - - - - - - - - - - - - -
 // $ffab-css-prefix: 'ffab';
+// $ffab-position-default: 'after';
+// $ffab-border-width: 0;
 // $ffab-angle: 15;
-// $ffab-animation-speed: 0.3s;
-// $ffab-animation-behavior: 'remove'; // @options 'remove', 'cover' or 'none'
-// $ffab-overlay: rgba(255, 255, 255, .1);
+// $ffab-transition-speed: 0.3s;
+// $ffab-transition-behavior: 'remove'; // @options 'remove', 'cover' or 'none'
+// $ffab-overlay-background-color: rgba(255, 255, 255, .1);
 ```
 
-## Utility Classes
+## TODO
 
-Many of the helper classes Font Awesome offers have been ported to this project.
-
-- `fa-spin` -> `ffab-spin`
-- `fa-pulse` -> `ffab-pulse`
-- `fa-rotate-90` -> `ffab-rotate-90`
-- `fa-rotate-180` -> `ffab-rotate-180`
-- `fa-rotate-270` -> `ffab-rotate-270`
-- `fa-flip-horizontal` -> `ffab-flip-horizontal`
-- `fa-flip-vertical` -> `ffab-flip-vertical`
+- [ ] Add SassDocs to the entire project
+- [ ] Create a CDN CSS to easily add ffab to any project (without Sass!)
+- [ ] Create a rounded version

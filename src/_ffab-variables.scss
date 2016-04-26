@@ -2,57 +2,32 @@
 // Variables (ffab)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// The CSS prefix for the class names
-// @type {string}
+/// The CSS prefix for the class names
+/// @type String
 $ffab-css-prefix: 'ffab' !default;
 
-// Defines the default position of the icon
-// @type {string}
-// @options 'before' or 'after'
+/// Defines the default position of the icon
+/// @type String
+/// @options 'before' or 'after'
 $ffab-position-default: 'after' !default;
 
-// Defines the width of the overlay area of the icon area
-// @type {number} pixel value
+/// Defines the width of the overlay area of the icon area
+/// @type Pixel
 $ffab-border-width: 0 !default;
 
-// The angle of the button's icon overlay
-// @type {integer} for degrees
+/// The angle (in degrees) of the button's icon overlay
+/// @type Number
 $ffab-angle: 15 !default;
 
-// The speed of the :hover animation
-// @type {seconds}
-$ffab-animation-speed: 0.3s !default;  // TODO: Refactor to "transition"
+/// The speed of the :hover animation
+/// @type Seconds
+$ffab-transition-speed: 0.3s !default;
 
-// Defines the default behavior of the :hover animation
-// @type {string}
-// @options 'remove', 'cover' or 'none'
-$ffab-animation-behavior: 'remove' !default;
+/// Defines the default behavior of the :hover transition
+/// @type String
+/// @options 'remove', 'cover' or 'none'
+$ffab-transition-behavior: 'remove' !default;
 
-// Defines the background of the icon overlay
-// @type {color}
-$ffab-overlay: rgba(255, 255, 255, .1) !default; // TODO: Better define (color?)
-
-// Determins if there is a button shadow
-// @type {integer}
-$ffab-has-shadow: true !default; // TODO: remove and refactor logic
-
-// The box-shadows properties of a `true` has shadow button
-// Set to none if you don't want the shadow;
-// @type {box-shadow value}
-$ffab-shadow-color: rgba(0, 0, 0, .1) !default; // Remove from code (add to individual projects)
-
-// Defines the size (height) of the box shadow
-// This number is divided by the button font size
-// (ex: $size / $ffab-shadow-size)
-// @type {integer}
-$ffab-shadow-size: 10 !default; // Remove from code (see $ffab-shadow-color)
-
-// Copy and paste into your Foundation project's _settings.scss file:
-// 37. Foundation Font Awesome Buttons
-// - - - - - - - - - - - - - - - -
-// $ffab-css-prefix: 'ffab';
-// $ffab-position-default: 'after';
-// $ffab-angle: 15;
-// $ffab-animation-speed: 0.3s;
-// $ffab-animation-behavior: 'remove'; // @options 'remove', 'cover' or 'none'
-// $ffab-overlay: rgba(255, 255, 255, .1);
+/// Defines the background of the icon overlay
+/// @type Color
+$ffab-overlay-background-color: rgba(255, 255, 255, .1) !default;
