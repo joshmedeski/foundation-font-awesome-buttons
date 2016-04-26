@@ -1,0 +1,33 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Variables (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+/// The CSS prefix for the class names
+/// @type String
+$ffab-css-prefix: 'ffab' !default;
+
+/// Defines the default position of the icon
+/// @type String
+/// @options 'before' or 'after'
+$ffab-default-position: 'after' !default;
+
+/// Defines the width of the overlay area of the icon area
+/// @type Pixel
+$ffab-border-width: 0 !default;
+
+/// The angle (in degrees) of the button's icon overlay
+/// @type Number
+$ffab-angle: 15 !default;
+
+/// The speed of the :hover animation
+/// @type Seconds
+$ffab-transition-speed: 0.3s !default;
+
+/// Defines the default behavior of the :hover transition
+/// @type String
+/// @options 'remove', 'cover' or 'none'
+$ffab-transition-behavior: 'remove' !default;
+
+/// Defines the background of the icon overlay
+/// @type Color
+$ffab-overlay-background-color: rgba(255, 255, 255, .1) !default;

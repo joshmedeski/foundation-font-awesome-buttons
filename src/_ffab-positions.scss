@@ -1,0 +1,63 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Positions (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-position($position, $size: default) {
+  @if $position == 'before' {
+    padding-left: ffab-width($size);
+
+    &:before {
+      left: get-side($button-padding, left);
+    }
+
+    &:after {
+      left: -#{$ffab-angle}px;
+      transform: skewX(#{$ffab-angle}deg);
+      transform-origin: left;
+    }
+  } @else if $position == 'after' {
+    padding-right: ffab-width($size);
+
+    &:before {
+      right: get-side($button-padding, right);
+    }
+
+    &:after {
+      right: -#{$ffab-angle}px;
+      transform: skewX(-#{$ffab-angle}deg);
+      transform-origin: right;
+    }
+  }
+}
+
+// Classes
+@mixin ffab-positions {
+  .#{$ffab-css-prefix}.after {
+    @include ffab-position('after');
+  }
+
+  .#{$ffab-css-prefix}.before {
+    @include ffab-position('before');
+  }
+
+  .#{$ffab-css-prefix}:not(.before):not(.after) {
+    @include ffab-position($ffab-default-position);
+  }
+
+  @each $size, $value in $button-sizes {
+    @if $size != default {
+      &.#{$size}:not(.before):not(.after) {
+        @include ffab-position($ffab-default-position, $size);
+        @include ffab-overlay-width($size);
+      }
+      &.#{$size}.after {
+        @include ffab-position('after', $size);
+        @include ffab-overlay-width($size);
+      }
+      &.#{$size}.before {
+        @include ffab-position('before', $size);
+        @include ffab-overlay-width($size);
+      }
+    }
+  }
+}

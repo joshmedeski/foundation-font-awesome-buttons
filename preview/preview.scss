@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+@import 'settings';
+$fa-font-path: '../bower_components/fontawesome/fonts/';
+
+@import 'foundation';
+@import 'font-awesome';
+@import 'ffab';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-button-group;
+
+@include ffab-everything;

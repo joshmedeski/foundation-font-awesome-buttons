@@ -1,0 +1,23 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Overlay (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-overlay-width($width: default) {
+  &::after {
+    width: ffab-width($width);
+  }
+}
+
+@mixin ffab-overlay($border-width: 0) {
+  &::after {
+    background-color: $ffab-overlay-background-color;
+    border: $border-width solid currentColor;
+    content: '';
+    height: 110%;
+    position: absolute;
+    top: -5%;
+    transition: all $ffab-transition-speed;
+    width: ffab-width(default);
+    z-index: 1;
+  }
+}

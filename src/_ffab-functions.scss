@@ -1,0 +1,15 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Functions (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function ffab-add($first, $second) {
+  @return strip-units($first) + strip-units($second) + rem;
+}
+
+@function ffab-width($size) {
+  @return strip-units(rem-calc($ffab-angle)) + strip-units(map-get($button-sizes, $size) * 3) + rem;
+}
