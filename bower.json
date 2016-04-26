@@ -6,7 +6,7 @@
   "ignore": [
     "gulpfile.js",
     "index.html",
-    "package.json",
+    "package.json"
   ],
   "main": [
     "scss/foundation-font-awesome-buttons.scss"
