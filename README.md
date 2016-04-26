@@ -48,18 +48,16 @@ Then you have to include the sass files in your main stylesheet (after the Found
 
 ## Settings
 
-There are a set of Scss variables that can help make these buttons your own. I recommend adding the following settings to you `_settings.scss` file (in the `05. Buttons` area) to follow the Foundation workflow.
+There are a set of Scss variables that can help make these buttons your own. I recommend adding the following variables to your project's `_settings.scss` file (to follow the Foundation workflow).
 
 ```scss
-// Foundation Font Awesome Buttons
-$ffab-css-prefix: 'ffab';
-$ffab-angle: 15;
-$ffab-animation-speed: .3s;
-$ffab-animation-behavior: 'remove';
-$ffab-overlay: rgba(255, 255, 255, .1);
-$ffab-has-shadow: true;
-$ffab-shadow-color: rgba(0, 0, 0, .1);
-$ffab-shadow-size: 10;
+// 37. Foundation Font Awesome Buttons
+// - - - - - - - - - - - - - - - -
+// $ffab-css-prefix: 'ffab';
+// $ffab-angle: 15;
+// $ffab-animation-speed: 0.3s;
+// $ffab-animation-behavior: 'remove'; // @options 'remove', 'cover' or 'none'
+// $ffab-overlay: rgba(255, 255, 255, .1);
 ```
 
 ## Utility Classes

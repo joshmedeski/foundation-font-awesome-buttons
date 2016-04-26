@@ -1,0 +1,35 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Transitions (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-transition($behavior) {
+  @if $behavior == 'cover' {
+    transform: skewX(0deg) !important;
+    width: 112% !important;
+  } @else if $behavior == 'remove' {
+    transform: skewX(0deg) !important;
+    width: 0% !important;
+  } @else {
+    @warn "An valid transition behavior is required (cover or remove)";
+  }
+}
+
+@mixin ffab-transitions {
+  .#{$ffab-css-prefix}:hover:not(.disabled) {
+    &:not(.static)::after {
+      @include ffab-transition($ffab-animation-behavior);
+    }
+  }
+
+  .#{$ffab-css-prefix}.remove:hover:not(.disabled) {
+    &::after {
+      @include ffab-transition('remove');
+    }
+  }
+
+  .#{$ffab-css-prefix}.cover:hover:not(.disabled) {
+    &::after {
+      @include ffab-transition('cover');
+    }
+  }
+}

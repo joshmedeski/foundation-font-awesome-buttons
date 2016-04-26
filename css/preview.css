@@ -20,7 +20,7 @@
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px / 1 FontAwesome;
+  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -94,11 +94,11 @@
 .fa.pull-right {
   margin-left: .3em; }
 
-.fa-spin, .ffab-spin::before {
+.fa-spin, .ffab.spin::before {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear; }
 
-.fa-pulse, .ffab-pulse::before {
+.fa-pulse, .ffab.pulse::before {
   -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8); }
 
@@ -118,45 +118,41 @@
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
 
-.fa-rotate-90, .ffab-rotate-90::before {
+.fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
-.fa-rotate-180, .ffab-rotate-180::before {
+.fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
 
-.fa-rotate-270, .ffab-rotate-270::before {
+.fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg); }
 
-.fa-flip-horizontal, .ffab-flip-horizontal::before {
+.fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
-.fa-flip-vertical, .ffab-flip-vertical::before {
+.fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1); }
 
-:root .fa-rotate-90, :root .ffab-rotate-90::before,
+:root .fa-rotate-90,
 :root .fa-rotate-180,
-:root .ffab-rotate-180::before,
 :root .fa-rotate-270,
-:root .ffab-rotate-270::before,
 :root .fa-flip-horizontal,
-:root .ffab-flip-horizontal::before,
-:root .fa-flip-vertical,
-:root .ffab-flip-vertical::before {
+:root .fa-flip-vertical {
   -webkit-filter: none;
           filter: none; }
 
@@ -3659,102 +3655,173 @@ kbd {
     float: none;
     top: -0.1em; }
 
-button.ffab-before, button.ffab-after,
-.button.ffab-before,
-.button.ffab-after {
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 -0.09rem 0 rgba(0, 0, 0, 0.1) inset; }
-  button.ffab-before::before, button.ffab-after::before,
-  .button.ffab-before::before,
-  .button.ffab-after::before {
-    display: inline-block;
-    font: normal normal normal 14px / 1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    line-height: 1;
-    position: absolute;
-    z-index: 2; }
-  button.ffab-before:after, button.ffab-after:after,
-  .button.ffab-before:after,
-  .button.ffab-after:after {
-    background: rgba(255, 255, 255, 0.1);
-    content: '';
-    height: 110%;
-    position: absolute;
-    top: -5%;
-    transition: all 0.3s;
-    width: 3.6375rem;
-    z-index: 1; }
-  button.ffab-before.tiny, button.ffab-after.tiny,
-  .button.ffab-before.tiny,
-  .button.ffab-after.tiny {
-    box-shadow: 0 -0.06rem 0 rgba(0, 0, 0, 0.1) inset; }
-  button.ffab-before.tiny::after, button.ffab-after.tiny::after,
-  .button.ffab-before.tiny::after,
-  .button.ffab-after.tiny::after {
-    width: 2.7375rem; }
-  button.ffab-before.small, button.ffab-after.small,
-  .button.ffab-before.small,
-  .button.ffab-after.small {
-    box-shadow: 0 -0.075rem 0 rgba(0, 0, 0, 0.1) inset; }
-  button.ffab-before.small::after, button.ffab-after.small::after,
-  .button.ffab-before.small::after,
-  .button.ffab-after.small::after {
-    width: 3.1875rem; }
-  button.ffab-before::after, button.ffab-after::after,
-  .button.ffab-before::after,
-  .button.ffab-after::after {
-    width: 3.6375rem; }
-  button.ffab-before.large, button.ffab-after.large,
-  .button.ffab-before.large,
-  .button.ffab-after.large {
-    box-shadow: 0 -0.125rem 0 rgba(0, 0, 0, 0.1) inset; }
-  button.ffab-before.large::after, button.ffab-after.large::after,
-  .button.ffab-before.large::after,
-  .button.ffab-after.large::after {
-    width: 4.6875rem; }
-  button.ffab-before:hover:not(.disabled):after, button.ffab-after:hover:not(.disabled):after,
-  .button.ffab-before:hover:not(.disabled):after,
-  .button.ffab-after:hover:not(.disabled):after {
-    -webkit-transform: skewX(0deg) !important;
-        -ms-transform: skewX(0deg) !important;
-            transform: skewX(0deg) !important;
-    width: 110% !important; }
+.button-group {
+  margin-bottom: 1rem;
+  font-size: 0; }
+  .button-group::before, .button-group::after {
+    content: ' ';
+    display: table;
+    -webkit-flex-basis: 0;
+        -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1; }
+  .button-group::after {
+    clear: both; }
+  .button-group .button {
+    margin: 0;
+    font-size: 0.9rem;
+    float: left; }
+    .button-group .button:not(:last-child) {
+      border-right: 1px solid #fefefe; }
+  .button-group.tiny .button {
+    font-size: 0.6rem; }
+  .button-group.small .button {
+    font-size: 0.75rem; }
+  .button-group.large .button {
+    font-size: 1.25rem; }
+  .button-group.expanded {
+    margin-right: -1px; }
+    .button-group.expanded::before, .button-group.expanded::after {
+      display: none; }
+    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button {
+      display: inline-block;
+      width: calc(50% - 1px);
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button {
+      display: inline-block;
+      width: calc(33.33333% - 1px);
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button {
+      display: inline-block;
+      width: calc(25% - 1px);
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button {
+      display: inline-block;
+      width: calc(20% - 1px);
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button {
+      display: inline-block;
+      width: calc(16.66667% - 1px);
+      margin-right: 1px; }
+  .button-group.primary .button {
+    background-color: #2199e8;
+    color: #fefefe; }
+    .button-group.primary .button:hover, .button-group.primary .button:focus {
+      background-color: #147cc0;
+      color: #fefefe; }
+  .button-group.secondary .button {
+    background-color: #777;
+    color: #fefefe; }
+    .button-group.secondary .button:hover, .button-group.secondary .button:focus {
+      background-color: #5f5f5f;
+      color: #fefefe; }
+  .button-group.success .button {
+    background-color: #3adb76;
+    color: #fefefe; }
+    .button-group.success .button:hover, .button-group.success .button:focus {
+      background-color: #22bb5b;
+      color: #fefefe; }
+  .button-group.warning .button {
+    background-color: #ffae00;
+    color: #fefefe; }
+    .button-group.warning .button:hover, .button-group.warning .button:focus {
+      background-color: #cc8b00;
+      color: #fefefe; }
+  .button-group.alert .button {
+    background-color: #ec5840;
+    color: #fefefe; }
+    .button-group.alert .button:hover, .button-group.alert .button:focus {
+      background-color: #da3116;
+      color: #fefefe; }
+  .button-group.stacked .button, .button-group.stacked-for-small .button, .button-group.stacked-for-medium .button {
+    width: 100%; }
+    .button-group.stacked .button:not(:last-child), .button-group.stacked-for-small .button:not(:last-child), .button-group.stacked-for-medium .button:not(:last-child) {
+      margin-right: 0; }
+  @media screen and (min-width: 40em) {
+    .button-group.stacked-for-small .button {
+      width: auto; }
+      .button-group.stacked-for-small .button:not(:last-child) {
+        margin-right: 1px; } }
+  @media screen and (min-width: 64em) {
+    .button-group.stacked-for-medium .button {
+      width: auto; }
+      .button-group.stacked-for-medium .button:not(:last-child) {
+        margin-right: 1px; } }
+  @media screen and (max-width: 39.9375em) {
+    .button-group.stacked-for-small.expanded {
+      display: block; }
+      .button-group.stacked-for-small.expanded .button {
+        display: block;
+        margin-right: 0; } }
 
-button.ffab-animaiton-remove:hover:not(.disabled):after,
-.button.ffab-animaiton-remove:hover:not(.disabled):after {
+.ffab:hover:not(.disabled):not(.static)::after {
   -webkit-transform: skewX(0deg) !important;
       -ms-transform: skewX(0deg) !important;
           transform: skewX(0deg) !important;
   width: 0% !important; }
 
-button.ffab-animaiton-cover:hover:not(.disabled):after,
-.button.ffab-animaiton-cover:hover:not(.disabled):after {
+.ffab.remove:hover:not(.disabled)::after {
   -webkit-transform: skewX(0deg) !important;
       -ms-transform: skewX(0deg) !important;
           transform: skewX(0deg) !important;
-  width: 110% !important; }
+  width: 0% !important; }
 
-button.ffab-before,
-.button.ffab-before {
+.ffab.cover:hover:not(.disabled)::after {
+  -webkit-transform: skewX(0deg) !important;
+      -ms-transform: skewX(0deg) !important;
+          transform: skewX(0deg) !important;
+  width: 112% !important; }
+
+.ffab.rotate-90::before {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.ffab.rotate-180::before {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.ffab.rotate-270::before {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.ffab.flip-horizontal::before {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+.ffab.flip-vertical::before {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1); }
+
+.ffab.after {
+  padding-right: 3.6375rem; }
+  .ffab.after:before {
+    right: 1em; }
+  .ffab.after:after {
+    right: -15px;
+    -webkit-transform: skewX(-15deg);
+        -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right; }
+
+.ffab.before {
   padding-left: 3.6375rem; }
-  button.ffab-before.tiny,
-  .button.ffab-before.tiny {
-    padding-left: 2.7375rem; }
-  button.ffab-before.small,
-  .button.ffab-before.small {
-    padding-left: 3.1875rem; }
-  button.ffab-before.large,
-  .button.ffab-before.large {
-    padding-left: 4.6875rem; }
-  button.ffab-before:before,
-  .button.ffab-before:before {
+  .ffab.before:before {
     left: 1em; }
-  button.ffab-before:after,
-  .button.ffab-before:after {
+  .ffab.before:after {
     left: -15px;
     -webkit-transform: skewX(15deg);
         -ms-transform: skewX(15deg);
@@ -3763,21 +3830,11 @@ button.ffab-before,
         -ms-transform-origin: left;
             transform-origin: left; }
 
-button.ffab-after,
-.button.ffab-after {
-  transition: right 0.3s;
+.ffab:not(.before):not(.after) {
   padding-right: 3.6375rem; }
-  button.ffab-after.tiny,
-  .button.ffab-after.tiny {
-    padding-right: 2.7375rem; }
-  button.ffab-after.small,
-  .button.ffab-after.small {
-    padding-right: 3.1875rem; }
-  button.ffab-after.large,
-  .button.ffab-after.large {
-    padding-right: 4.6875rem; }
-  button.ffab-after:after,
-  .button.ffab-after:after {
+  .ffab:not(.before):not(.after):before {
+    right: 1em; }
+  .ffab:not(.before):not(.after):after {
     right: -15px;
     -webkit-transform: skewX(-15deg);
         -ms-transform: skewX(-15deg);
@@ -3785,3 +3842,188 @@ button.ffab-after,
     -webkit-transform-origin: right;
         -ms-transform-origin: right;
             transform-origin: right; }
+
+.tiny:not(.before):not(.after) {
+  padding-right: 2.7375rem; }
+  .tiny:not(.before):not(.after):before {
+    right: 1em; }
+  .tiny:not(.before):not(.after):after {
+    right: -15px;
+    -webkit-transform: skewX(-15deg);
+        -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right; }
+  .tiny:not(.before):not(.after)::after {
+    width: 2.7375rem; }
+
+.tiny.after {
+  padding-right: 2.7375rem; }
+  .tiny.after:before {
+    right: 1em; }
+  .tiny.after:after {
+    right: -15px;
+    -webkit-transform: skewX(-15deg);
+        -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right; }
+  .tiny.after::after {
+    width: 2.7375rem; }
+
+.tiny.before {
+  padding-left: 2.7375rem; }
+  .tiny.before:before {
+    left: 1em; }
+  .tiny.before:after {
+    left: -15px;
+    -webkit-transform: skewX(15deg);
+        -ms-transform: skewX(15deg);
+            transform: skewX(15deg);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left; }
+  .tiny.before::after {
+    width: 2.7375rem; }
+
+.small:not(.before):not(.after) {
+  padding-right: 3.1875rem; }
+  .small:not(.before):not(.after):before {
+    right: 1em; }
+  .small:not(.before):not(.after):after {
+    right: -15px;
+    -webkit-transform: skewX(-15deg);
+        -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right; }
+  .small:not(.before):not(.after)::after {
+    width: 3.1875rem; }
+
+.small.after {
+  padding-right: 3.1875rem; }
+  .small.after:before {
+    right: 1em; }
+  .small.after:after {
+    right: -15px;
+    -webkit-transform: skewX(-15deg);
+        -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right; }
+  .small.after::after {
+    width: 3.1875rem; }
+
+.small.before {
+  padding-left: 3.1875rem; }
+  .small.before:before {
+    left: 1em; }
+  .small.before:after {
+    left: -15px;
+    -webkit-transform: skewX(15deg);
+        -ms-transform: skewX(15deg);
+            transform: skewX(15deg);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left; }
+  .small.before::after {
+    width: 3.1875rem; }
+
+.large:not(.before):not(.after) {
+  padding-right: 4.6875rem; }
+  .large:not(.before):not(.after):before {
+    right: 1em; }
+  .large:not(.before):not(.after):after {
+    right: -15px;
+    -webkit-transform: skewX(-15deg);
+        -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right; }
+  .large:not(.before):not(.after)::after {
+    width: 4.6875rem; }
+
+.large.after {
+  padding-right: 4.6875rem; }
+  .large.after:before {
+    right: 1em; }
+  .large.after:after {
+    right: -15px;
+    -webkit-transform: skewX(-15deg);
+        -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+            transform-origin: right; }
+  .large.after::after {
+    width: 4.6875rem; }
+
+.large.before {
+  padding-left: 4.6875rem; }
+  .large.before:before {
+    left: 1em; }
+  .large.before:after {
+    left: -15px;
+    -webkit-transform: skewX(15deg);
+        -ms-transform: skewX(15deg);
+            transform: skewX(15deg);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left; }
+  .large.before::after {
+    width: 4.6875rem; }
+
+.ffab {
+  overflow: hidden;
+  position: relative; }
+  .ffab::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    position: absolute;
+    transition: all 0.3s ease-out;
+    z-index: 2; }
+  .ffab::after {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0 solid currentColor;
+    content: '';
+    height: 110%;
+    position: absolute;
+    top: -5%;
+    transition: all 0.3s;
+    width: 3.6375rem;
+    z-index: 1; }
+  .ffab .ffab:hover:not(.disabled):not(.static)::after {
+    -webkit-transform: skewX(0deg) !important;
+        -ms-transform: skewX(0deg) !important;
+            transform: skewX(0deg) !important;
+    width: 0% !important; }
+  .ffab .ffab.remove:hover:not(.disabled)::after {
+    -webkit-transform: skewX(0deg) !important;
+        -ms-transform: skewX(0deg) !important;
+            transform: skewX(0deg) !important;
+    width: 0% !important; }
+  .ffab .ffab.cover:hover:not(.disabled)::after {
+    -webkit-transform: skewX(0deg) !important;
+        -ms-transform: skewX(0deg) !important;
+            transform: skewX(0deg) !important;
+    width: 112% !important; }
+  .ffab.hollow::after, .ffab.bordered::after {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid currentColor;
+    content: '';
+    height: 110%;
+    position: absolute;
+    top: -5%;
+    transition: all 0.3s;
+    width: 3.6375rem;
+    z-index: 1; }

@@ -1,0 +1,18 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Base (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-base {
+  overflow: hidden;
+  position: relative;
+}
+
+@mixin ffab-icon {
+  &::before {
+    @include fa-icon;
+    line-height: 1;
+    position: absolute;
+    transition: all $ffab-animation-speed ease-out;
+    z-index: 2;
+  }
+}

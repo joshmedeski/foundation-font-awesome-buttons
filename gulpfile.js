@@ -4,10 +4,11 @@ var $    = require('gulp-load-plugins')();
 var sassPaths = [
   'bower_components/foundation-sites/scss',
   'bower_components/fontawesome/scss',
+  'src',
 ];
 
 gulp.task('sass', function () {
-  return gulp.src('scss/foundation-font-awesome-buttons-styles.scss')
+  return gulp.src(['preview/*.scss', 'src/*.scss'])
     .pipe($.sass({
       includePaths: sassPaths,
     })
@@ -19,5 +20,6 @@ gulp.task('sass', function () {
 });
 
 gulp.task('default', ['sass'], function () {
-  gulp.watch(['scss/*.scss'], ['sass']);
+  gulp.watch(['preview/*.scss'], ['sass']);
+  gulp.watch(['src/*.scss'], ['sass']);
 });

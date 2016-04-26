@@ -1,0 +1,43 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Utilities (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-utilities-animate {
+  .#{$ffab-css-prefix}.spin::before {
+    @extend .fa-spin;
+  }
+
+  .#{$ffab-css-prefix}.pulse::before {
+    @extend .fa-pulse;
+  }
+}
+
+@mixin ffab-utilities-transform {
+  .#{$ffab-css-prefix}.rotate-90::before {
+    @include fa-icon-rotate(90deg, 1)
+  }
+
+  .#{$ffab-css-prefix}.rotate-180::before {
+    @include fa-icon-rotate(180deg, 2);
+  }
+
+  .#{$ffab-css-prefix}.rotate-270::before {
+    @include fa-icon-rotate(270deg, 3);
+  }
+}
+
+@mixin ffab-utilities-flip {
+  .#{$ffab-css-prefix}.flip-horizontal::before {
+    @include fa-icon-flip(-1, 1, 0);
+  }
+
+  .#{$ffab-css-prefix}.flip-vertical::before {
+    @include fa-icon-flip(1, -1, 2);
+  }
+}
+
+@mixin ffab-utilities {
+  @include ffab-utilities-animate;
+  @include ffab-utilities-transform;
+  @include ffab-utilities-flip;
+}
