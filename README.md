@@ -4,6 +4,8 @@
 
 Foundation Icon Buttons combines the Zurb's Foundation with the Font Awesome project. Building stylish icon buttons is quick and easy.
 
+![Button Preview](https://raw.githubusercontent.com/joshmedeski/foundation-font-awesome-buttons/master/ffab-preview.png)
+
 ## How to Use
 
 It's simple! Just add `ffab` and a Font Awesome class to a button
@@ -12,7 +14,7 @@ It's simple! Just add `ffab` and a Font Awesome class to a button
 <a href="#" class="button ffab fa-arrow-right">Text</a>
 ```
 
-[View Docs & Examples](http://)
+[View Docs & Examples](http://joshmedeski.github.io/foundation-font-awesome-buttons//)
 
 ## Setup
 
@@ -100,3 +102,4 @@ There are a set of Sass variables that can help make these buttons your own. I r
 - [ ] Add SassDocs to the entire project
 - [ ] Create a CDN CSS to easily add ffab to any project (without Sass!)
 - [ ] Create a rounded version
+- [ ] Remove background color from hollow buttons
