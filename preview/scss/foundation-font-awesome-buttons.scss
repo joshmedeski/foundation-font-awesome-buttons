@@ -22,7 +22,7 @@ $ffab-animation-speed: .3s !default;
 // Defines the behavior of the :hover animation
 // @type {string}
 // @options 'remove' or 'cover' or 'none'
-$ffab-animation-behavior: 'remove' !default;
+$ffab-animation-behavior: 'cover' !default;
 
 // Defines the background of the icon overlay
 // @type {color}
@@ -150,7 +150,15 @@ $ffab-shadow-size: 10 !default;
 
 // @mixin ffab-after {}
 
+@mixin ffab-animation-cover {
+  transform: skewX(0deg) !important;
+  width: 110% !important;
+}
 
+@mixin ffab-animation-remove {
+  transform: skewX(0deg) !important;
+  width: 0% !important;
+}
 
 
 // Classes
@@ -186,17 +194,21 @@ $ffab-shadow-size: 10 !default;
 
       &:hover:not(.disabled) {
         &:after {
-          @if $ffab-animation-behavior == 'cover' {
-            transform: skewX(0deg) !important;
-            width: 100% !important;
-          } @else if $ffab-animation-behavior == 'remove' {
-            transform: skewX(0deg) !important;
-            width: 0% !important;
-          } @else {
-
+          @if $ffab-animation-behavior == 'remove' {
+            @include ffab-animation-remove;
+          } @else if $ffab-animation-behavior == 'cover' {
+            @include ffab-animation-cover;
           }
         }
       }
+    }
+
+    &.#{$ffab-css-prefix}-animaiton-remove:hover:not(.disabled):after {
+      @include ffab-animation-remove;
+    }
+
+    &.#{$ffab-css-prefix}-animaiton-cover:hover:not(.disabled):after {
+      @include ffab-animation-cover;
     }
 
     &.#{$ffab-css-prefix}-before {
@@ -221,6 +233,7 @@ $ffab-shadow-size: 10 !default;
     }
 
     &.#{$ffab-css-prefix}-after {
+      transition: right $ffab-animation-speed;
 
       @each $size, $value in $button-sizes {
         @if $size == default {
@@ -230,10 +243,6 @@ $ffab-shadow-size: 10 !default;
             padding-right: ffab-width(#{$size});
           }
         }
-      }
-
-      &:before {
-        right: get-side($button-padding, right);
       }
 
       &:after {
