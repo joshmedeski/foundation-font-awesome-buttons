@@ -13,8 +13,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.6.1");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.6.1") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.6.1") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.6.1") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.6.1#fontawesomeregular") format("svg");
+  src: url("../bower_components/fontawesome/fonts//fontawesome-webfont.eot?v=4.6.1");
+  src: url("../bower_components/fontawesome/fonts//fontawesome-webfont.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../bower_components/fontawesome/fonts//fontawesome-webfont.woff2?v=4.6.1") format("woff2"), url("../bower_components/fontawesome/fonts//fontawesome-webfont.woff?v=4.6.1") format("woff"), url("../bower_components/fontawesome/fonts//fontawesome-webfont.ttf?v=4.6.1") format("truetype"), url("../bower_components/fontawesome/fonts//fontawesome-webfont.svg?v=4.6.1#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -2613,8 +2613,13 @@ button {
     padding-right: 0; }
   .row .row {
     max-width: none;
-    margin-left: -0.9375rem;
-    margin-right: -0.9375rem; }
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
+    max-width: none; }
+    @media screen and (min-width: 40em) {
+      .row .row {
+        margin-left: -0.9375rem;
+        margin-right: -0.9375rem; } }
     .row .row.collapse {
       margin-left: 0;
       margin-right: 0; }
@@ -2627,8 +2632,12 @@ button {
 .column, .columns {
   width: 100%;
   float: left;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem; }
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
+  @media screen and (min-width: 40em) {
+    .column, .columns {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
   .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
     float: right; }
   .column.end:last-child:last-child, .end.columns:last-child:last-child {
@@ -2891,8 +2900,8 @@ button {
   margin-right: 0; }
 
 .small-uncollapse > .column, .small-uncollapse > .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem; }
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
 
 .small-centered {
   float: none;
@@ -3624,15 +3633,15 @@ kbd {
   border: 1px solid transparent;
   border-radius: 0;
   padding: 0.85em 1em;
-  margin: 0 1rem 1rem 0;
+  margin: 0 0 1rem 0;
   font-size: 0.9rem;
   background-color: #2199e8;
-  color: #fff; }
+  color: #fefefe; }
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
     background-color: #1583cc;
-    color: #fff; }
+    color: #fefefe; }
   .button.tiny {
     font-size: 0.6rem; }
   .button.small {
@@ -3646,34 +3655,34 @@ kbd {
     margin-right: 0; }
   .button.primary {
     background-color: #2199e8;
-    color: #fff; }
+    color: #fefefe; }
     .button.primary:hover, .button.primary:focus {
       background-color: #147cc0;
-      color: #fff; }
+      color: #fefefe; }
   .button.secondary {
     background-color: #777;
-    color: #fff; }
+    color: #fefefe; }
     .button.secondary:hover, .button.secondary:focus {
       background-color: #5f5f5f;
-      color: #fff; }
+      color: #fefefe; }
   .button.success {
     background-color: #3adb76;
-    color: #fff; }
+    color: #fefefe; }
     .button.success:hover, .button.success:focus {
       background-color: #22bb5b;
-      color: #fff; }
+      color: #fefefe; }
   .button.warning {
     background-color: #ffae00;
-    color: #fff; }
+    color: #fefefe; }
     .button.warning:hover, .button.warning:focus {
       background-color: #cc8b00;
-      color: #fff; }
+      color: #fefefe; }
   .button.alert {
     background-color: #ec5840;
-    color: #fff; }
+    color: #fefefe; }
     .button.alert:hover, .button.alert:focus {
       background-color: #da3116;
-      color: #fff; }
+      color: #fefefe; }
   .button.hollow {
     border: 1px solid #2199e8;
     color: #2199e8; }
@@ -3733,6 +3742,101 @@ kbd {
     margin-left: 0;
     float: none;
     top: -0.1em; }
+
+.button-group {
+  margin-bottom: 1rem;
+  font-size: 0; }
+  .button-group::before, .button-group::after {
+    content: ' ';
+    display: table; }
+  .button-group::after {
+    clear: both; }
+  .button-group .button {
+    margin: 0;
+    font-size: 0.9rem; }
+    .button-group .button:not(:last-child) {
+      margin-right: 1px; }
+  .button-group.tiny .button {
+    font-size: 0.6rem; }
+  .button-group.small .button {
+    font-size: 0.75rem; }
+  .button-group.large .button {
+    font-size: 1.25rem; }
+  .button-group.expanded {
+    margin-right: -1px; }
+    .button-group.expanded::before, .button-group.expanded::after {
+      display: none; }
+    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button {
+      display: inline-block;
+      width: 50%;
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button {
+      display: inline-block;
+      width: 33.33333%;
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button {
+      display: inline-block;
+      width: 25%;
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button {
+      display: inline-block;
+      width: 20%;
+      margin-right: 1px; }
+    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button {
+      display: inline-block;
+      width: 16.66667%;
+      margin-right: 1px; }
+  .button-group.primary .button {
+    background-color: #2199e8;
+    color: #fefefe; }
+    .button-group.primary .button:hover, .button-group.primary .button:focus {
+      background-color: #147cc0;
+      color: #fefefe; }
+  .button-group.secondary .button {
+    background-color: #777;
+    color: #fefefe; }
+    .button-group.secondary .button:hover, .button-group.secondary .button:focus {
+      background-color: #5f5f5f;
+      color: #fefefe; }
+  .button-group.success .button {
+    background-color: #3adb76;
+    color: #fefefe; }
+    .button-group.success .button:hover, .button-group.success .button:focus {
+      background-color: #22bb5b;
+      color: #fefefe; }
+  .button-group.warning .button {
+    background-color: #ffae00;
+    color: #fefefe; }
+    .button-group.warning .button:hover, .button-group.warning .button:focus {
+      background-color: #cc8b00;
+      color: #fefefe; }
+  .button-group.alert .button {
+    background-color: #ec5840;
+    color: #fefefe; }
+    .button-group.alert .button:hover, .button-group.alert .button:focus {
+      background-color: #da3116;
+      color: #fefefe; }
+  .button-group.stacked .button, .button-group.stacked-for-small .button, .button-group.stacked-for-medium .button {
+    width: 100%;
+    border-right: 1px solid transparent; }
+    .button-group.stacked .button:not(:last-child), .button-group.stacked-for-small .button:not(:last-child), .button-group.stacked-for-medium .button:not(:last-child) {
+      border-bottom: 1px solid #fefefe; }
+  @media screen and (min-width: 40em) {
+    .button-group.stacked-for-small .button {
+      width: auto; }
+      .button-group.stacked-for-small .button:not(:last-child) {
+        margin-right: 1px; } }
+  @media screen and (min-width: 64em) {
+    .button-group.stacked-for-medium .button {
+      width: auto; }
+      .button-group.stacked-for-medium .button:not(:last-child) {
+        margin-right: 1px; } }
+  @media screen and (max-width: 39.9375em) {
+    .button-group.stacked-for-small.expanded {
+      display: block; }
+      .button-group.stacked-for-small.expanded .button {
+        display: block;
+        margin-right: 0; } }
 
 .ffab:hover:not(.disabled):not(.static)::after {
   -webkit-transform: skewX(0deg) !important;
@@ -4005,7 +4109,3 @@ kbd {
     transition: all 0.3s;
     width: 3.6375rem;
     z-index: 1; }
-
-section {
-  border-bottom: 1px solid #dddddd;
-  margin-bottom: 40px; }

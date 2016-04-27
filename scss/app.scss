@@ -10,7 +10,7 @@
 @import 'settings';
 @import 'foundation';
 @import 'font-awesome';
-@import 'foundation-font-awesome-buttons';
+@import 'ffab';
 
 
 
@@ -21,7 +21,7 @@
 @include foundation-grid;
 @include foundation-typography;
 @include foundation-button;
-@include foundation-font-awesome-buttons;
+@include ffab-everything;
 
 
 

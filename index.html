@@ -13,161 +13,200 @@
     <div class="row">
         <div class="small-12 columns">
             <h1>Foundation Font Awesome Buttons</h1>
-            <h3 class="subheader">Foundation Font Awesome Buttons are a set of tools and styles to easily add icons to your buttons.</h3>
-            <hr>
-            <a href="javascript:void(0)" class="button ffab-after fa-arrow-right">Icon Button</a>
+            <h4 class="subheader">by Josh Medeski</h4>
+            <p>Foundation Font Awesome Buttons are a set of classes to easily add vector icons to your Zurb Foundation for Site's buttons using the Font Awesome icon set.</p>
             <hr>
             <section>
                 <h2>Button</h2>
-                <p>You can create a button using minimal markup.</p>
+                <p>Add the foundation <code>.button</code> with the <code>.ffab</code> class and a Font Awesome class (ex: <code>.fa-arrow-right</code>).</p>
                 <div class="row">
                     <div class="large-5 columns">
                         <h4>HTML</h4>
-                        <pre><code class="html">&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Default Button&lt;/a&gt;</code></pre>
+                        <pre><code class="html">&lt;a href=&quot;#&quot; class=&quot;button ffab fa-arrow-right&quot;&gt;Default Button&lt;/a&gt;</code></pre>
                     </div>
                     <div class="large-7 columns">
                         <h4>Rendered HTML</h4>
-                        <a href="javascript:void(0)" class="button">Default Button</a>
+                        <a href="javascript:void(0)" class="button ffab fa-arrow-right">Default Button</a>
                         <br>
                     </div>
                 </div>
             </section>
             <section>
-                <h2>Button Icon</h2>
-                <p>You can add an icon to your button using a position class name (<code>ffab-before</code> or <code>ffab-after</code>) and a Font Awesome icon class name (ex: <code>fa-arrow-right</code>.</p>
+                <h2>Positioning</h2>
+                <p>By default, the icon's position is after the text (but can be changed with the <code>$ffab-default-position</code> variable).</p>
+                <p>To overwrite the default behavior, simply add a <code>.before</code> or <code>.after</code> class to the element.</p>
                 <div class="row">
                     <div class="large-5 columns">
                         <h4>HTML</h4>
                         <pre>
                             <code>&lt;!-- Icon Before --&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-before fa-arrow-left ]&quot;&gt;Icon Before&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab before fa-arrow-left ]&quot;&gt;Icon Before&lt;/a&gt;
 &lt;!-- Icon After --&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-after fa-arrow-right ]&quot;&gt;Icon After&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab after fa-arrow-right ]&quot;&gt;Icon After&lt;/a&gt;
                             </code>
                         </pre>
                     </div>
                     <div class="large-7 columns">
                         <h4>Rendered HTML</h4>
-                        <a href="javascript:void(0)" class="button [ ffab-before fa-arrow-left ]">Icon Before</a>
-                        <a href="javascript:void(0)" class="button [ ffab-after fa-arrow-right ]">Icon After</a>
+                        <a href="javascript:void(0)" class="button [ ffab before fa-arrow-left ]">Icon Before</a>
+                        <a href="javascript:void(0)" class="button [ ffab after fa-arrow-right ]">Icon After</a>
                     </div>
                 </div>
             </section>
             <section>
-                <h2>Button Sizing</h2>
-                <p>Additional classes can be added to your component to change its size and shape.</p>
+                <h2>Sizing</h2>
+                <p>Additional classes can be added to your component to change its size and shape (according to Zurb Foundation's documentation).</p>
                 <div class="row">
                     <div class="large-5 columns">
                         <h4>HTML</h4>
                         <pre>
                             <code>&lt;!-- Size Classes --&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button tiny ] [ ffab-after fa-arrow-right ]&quot;&gt;Tiny Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button small ] [ ffab-after fa-arrow-right ]&quot;&gt;Small Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button ] [ ffab-after fa-arrow-right ]&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button large ] [ ffab-after fa-arrow-right ]&quot;&gt;Large Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button expand ] [ ffab-after fa-expand ]&quot;&gt;Expanded Button&lt;/a&gt;
-&lt;!-- Radius Classes --&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button round ] [ ffab-after fa-circle ]&quot;&gt;Round Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button radius ] [ ffab-after fa-square ]&quot;&gt;Radius Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button tiny ][ ffab fa-arrow-right ]&quot;&gt;Tiny Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button small ][ ffab fa-arrow-right ]&quot;&gt;Small Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button ][ ffab fa-arrow-right ]&quot;&gt;Default Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button large ][ ffab fa-arrow-right ]&quot;&gt;Large Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button expanded ][ ffab fa-expand ]&quot;&gt;Expanded Button&lt;/a&gt;
                             </code>
                         </pre>
                     </div>
                     <div class="large-7 columns">
                         <h4>Rendered HTML</h4>
                         <!-- Size Classes -->
-                        <a href="javascript:void(0)" class="[ button tiny ] [ ffab-after fa-arrow-right ]">Tiny Button</a>
-                        <a href="javascript:void(0)" class="[ button small ] [ ffab-after fa-arrow-right ]">Small Button</a>
-                        <a href="javascript:void(0)" class="[ button ] [ ffab-after fa-arrow-right ]">Default Button</a>
-                        <a href="javascript:void(0)" class="[ button large ] [ ffab-after fa-arrow-right ]">Large Button</a>
-                        <a href="javascript:void(0)" class="[ button expand ] [ ffab-after fa-expand ]">Expanded Button</a>
-                        <!-- Radius Classes -->
-                        <a href="javascript:void(0)" class="[ button round ] [ ffab-after fa-circle ]">Round Button</a>
-                        <a href="javascript:void(0)" class="[ button radius ] [ ffab-after fa-square ]">Radius Button</a>
+                        <a href="javascript:void(0)" class="[ button tiny ][ ffab fa-arrow-right ]">Tiny Button</a>
+                        <a href="javascript:void(0)" class="[ button small ][ ffab fa-arrow-right ]">Small Button</a>
+                        <a href="javascript:void(0)" class="[ button ][ ffab fa-arrow-right ]">Default Button</a>
+                        <a href="javascript:void(0)" class="[ button large ][ ffab fa-arrow-right ]">Large Button</a>
+                        <br>
+                        <a href="javascript:void(0)" class="[ expanded button ][ ffab fa-expand ]">Expanded Button</a>
                     </div>
                 </div>
             </section>
             <section>
-                <h2>Button Colors</h2>
+                <h2>Colors</h2>
                 <p>Additional classes can be added to your component to change its color and behavior.</p>
                 <div class="row">
                     <div class="large-5 columns">
                         <h4>HTML</h4>
                         <pre>
                             <code>&lt;!-- Color Classes --&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-after fa-arrow-right ]&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button success ] [ ffab-after fa-check ]&quot;&gt;Success Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button secondary ] [ ffab-after fa-user ]&quot;&gt;Secondary Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button alert ] [ ffab-after fa-warning ]&quot;&gt;Alert Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button info ] [ ffab-after fa-info-circle ]&quot;&gt;Info Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;[ button disabled ] [ ffab-after fa-ban ]&quot;&gt;Disabled Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab fa-arrow-right ]&quot;&gt;Default Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button success ][ ffab fa-check ]&quot;&gt;Success Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button secondary ][ ffab fa-user ]&quot;&gt;Secondary Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button alert ][ ffab fa-warning ]&quot;&gt;Alert Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button info ][ ffab fa-info-circle ]&quot;&gt;Info Button&lt;/a&gt;
                             </code>
                         </pre>
                     </div>
                     <div class="large-7 columns">
                         <h4>Rendered HTML</h4>
                         <!-- Color Classes -->
-                        <a href="javascript:void(0)" class="button [ ffab-after fa-arrow-right ]">Default Button</a>
-                        <a href="javascript:void(0)" class="[ button success ] [ ffab-after fa-check ]">Success Button</a>
-                        <a href="javascript:void(0)" class="[ button secondary ] [ ffab-after fa-user ]">Secondary Button</a>
-                        <a href="javascript:void(0)" class="[ button alert ] [ ffab-after fa-warning ]">Alert Button</a>
-                        <a href="javascript:void(0)" class="[ button info ] [ ffab-after fa-info-circle ]">Info Button</a>
-                        <a href="javascript:void(0)" class="[ button disabled ] [ ffab-after fa-ban ]">Disabled Button</a>
+                        <a href="javascript:void(0)" class="button [ ffab fa-arrow-right ]">Default Button</a>
+                        <a href="javascript:void(0)" class="[ button success ][ ffab fa-check ]">Success Button</a>
+                        <a href="javascript:void(0)" class="[ button secondary ][ ffab fa-user ]">Secondary Button</a>
+                        <a href="javascript:void(0)" class="[ button alert ][ ffab fa-warning ]">Alert Button</a>
                     </div>
                 </div>
             </section>
             <section>
-                <h2>Animated Icons</h2>
-                <p>Use the <code>ffab-spin</code> class to get any icon to rotate, and use <code>ffab-pulse</code> to have it rotate with 8 steps. Works well with <code>ffab-spinner</code>, <code>ffab-refresh</code>, and <code>ffab-cog</code>.</p>
+                <h2>Transitions</h2>
+                <p>The button's default transition style is "remove" but can be changed with the <code>$ffab-transition-behavior</code> Sass variable. To overwrite the default behaviors, add the <code>.remove</code> <code>.cover</code> or <code>.static</code> (no transition) class to change a specific button's transition behavior.</p>
+                <div class="row">
+                    <div class="large-5 columns">
+                        <h4>HTML</h4>
+                        <pre>
+                            <code>&lt;!-- Color Classes --&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button ][ ffab cover fa-arrow-right ]&quot;&gt; Cover Transition&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button ][ ffab remove fa-arrow-right ]&quot;&gt; Remove Transition&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;[ button ][ ffab static fa-arrow-right ]&quot;&gt; Static Transition&lt;/a&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="large-7 columns">
+                        <h4>Rendered HTML</h4>
+                        <!-- Color Classes -->
+                        <a href="javascript:void(0)" class="[ button ][ ffab cover fa-arrow-right ]">Cover Transition</a>
+                        <a href="javascript:void(0)" class="[ button ][ ffab remove fa-arrow-right ]">Remove Transition</a>
+                        <a href="javascript:void(0)" class="[ button ][ ffab static fa-arrow-right ]">Static Transition</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Extras</h2>
+                <p>The <code>.hollow</code> and <code>.disabled</code> Foundation button style's are also supported. You can also add add a <code>.bordered</code> class to add a border to the overlay on regular buttons.</p>
                 <div class="row">
                     <div class="large-5 columns">
                         <h4>HTML</h4>
                         <pre>
                             <code>&lt;!-- Animated Icons --&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-after ffab-spin fa-spinner ]&quot;&gt;Animated Icon&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-after ffab-spin fa-circle-o-notch ]&quot;&gt;Animated Icon&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-after ffab-spin fa-refresh ]&quot;&gt;Animated Icon&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-after ffab-spin fa-cog ]&quot;&gt;Animated Icon&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-after ffab-pulse fa-spinner ]&quot;&gt;Animated Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab hollow fa-arrow-right ]&quot;&gt;Animated Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab bordered fa-arrow-right ]&quot;&gt;Animated Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab disabled fa-arrow-right ]&quot;&gt;Animated Icon&lt;/a&gt;
                             </code>
                         </pre>
                     </div>
                     <div class="large-7 columns">
                         <h4>Rendered HTML</h4>
                         <!-- Animated Icons -->
-                        <a href="javascript:void(0)" class="button [ ffab-after ffab-spin fa-spinner ]">Animated Icon</a>
-                        <a href="javascript:void(0)" class="button [ ffab-after ffab-spin fa-circle-o-notch ]">Animated Icon</a>
-                        <a href="javascript:void(0)" class="button [ ffab-after ffab-spin fa-refresh ]">Animated Icon</a>
-                        <a href="javascript:void(0)" class="button [ ffab-after ffab-spin fa-cog ]">Animated Icon</a>
-                        <a href="javascript:void(0)" class="button [ ffab-after ffab-pulse fa-spinner ]">Animated Icon</a>
+                        <a href="javascript:void(0)" class="button [ ffab hollow fa-arrow-right ]">Hollow Button</a>
+                        <a href="javascript:void(0)" class="button [ ffab bordered fa-arrow-right ]">Bordered Button</a>
+                        <a href="javascript:void(0)" class="button [ ffab disabled fa-arrow-right ]">Disabled Button</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Animated Icons</h2>
+                <p>Add the <code>.spin</code> class to get any icon to rotate, or use <code>.pulse</code> to have it rotate with 8 steps. Works well with <code>.fa-spinner</code>, <code>.fa-refresh</code>, and <code>.fa-cog</code>.</p>
+                <div class="row">
+                    <div class="large-5 columns">
+                        <h4>HTML</h4>
+                        <pre>
+                            <code>&lt;!-- Animated Icons --&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab spin fa-spinner ]&quot;&gt;Animated Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab spin fa-circle-o-notch ]&quot;&gt;Animated Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab spin fa-refresh ]&quot;&gt;Animated Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab spin fa-cog ]&quot;&gt;Animated Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab pulse fa-spinner ]&quot;&gt;Animated Icon&lt;/a&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="large-7 columns">
+                        <h4>Rendered HTML</h4>
+                        <!-- Animated Icons -->
+                        <a href="javascript:void(0)" class="button [ ffab spin fa-spinner ]">Animated Icon</a>
+                        <a href="javascript:void(0)" class="button [ ffab spin fa-circle-o-notch ]">Animated Icon</a>
+                        <a href="javascript:void(0)" class="button [ ffab spin fa-refresh ]">Animated Icon</a>
+                        <a href="javascript:void(0)" class="button [ ffab spin fa-cog ]">Animated Icon</a>
+                        <a href="javascript:void(0)" class="button [ ffab pulse fa-spinner ]">Animated Icon</a>
                     </div>
                 </div>
             </section>
             <section>
                 <h2>Rotated &amp; Flipped</h2>
-                <p>To arbitrarily rotate and flip icons, use the <code>fa-rotate-*</code> and <code>fa-flip-*</code> classes.</p>
+                <p>To arbitrarily rotate and flip icons, use the <code>.rotate-90</code>, <code>.rotate-180</code> or <code>.rotate-270</code> classes to rotate the icon, and <code>.flip-horizontal</code> or <code>.flip-vertical</code> classes to flip the icon.</p>
                 <div class="row">
                     <div class="large-5 columns">
                         <h4>HTML</h4>
                         <pre>
                             <code>&lt;!-- Rotated &amp; Flipped --&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-before fa-shield ]&quot;&gt;Normal Icon&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-before fa-shield ffab-rotate-90 ]&quot;&gt;Rotate Icon 90&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-before fa-shield ffab-rotate-180 ]&quot;&gt;Rotate Icon 180&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-before fa-shield ffab-rotate-270 ]&quot;&gt;Rotate Icon 270&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-before fa-shield ffab-flip-horizontal ]&quot;&gt;Rotate Icon Horizontal&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button [ ffab-before fa-shield ffab-flip-vertical ]&quot;&gt;Rotate Icon Vertical&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab fa-shield ]&quot;&gt;Normal Icon&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab fa-shield rotate-90 ]&quot;&gt;Rotate Icon 90&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab fa-shield rotate-180 ]&quot;&gt;Rotate Icon 180&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab fa-shield rotate-270 ]&quot;&gt;Rotate Icon 270&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab fa-shield flip-horizontal ]&quot;&gt;Rotate Icon Horizontal&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button [ ffab fa-shield flip-vertical ]&quot;&gt;Rotate Icon Vertical&lt;/a&gt;
                             </code>
                         </pre>
                     </div>
                     <div class="large-7 columns">
                         <h4>Rendered HTML</h4>
                         <!-- Animated Icons -->
-                        <a href="javascript:void(0)" class="button [ ffab-before fa-shield ]">Normal Icon</a>
-                        <a href="javascript:void(0)" class="button [ ffab-before fa-shield ffab-rotate-90 ]">Rotate Icon 90</a>
-                        <a href="javascript:void(0)" class="button [ ffab-before fa-shield ffab-rotate-180 ]">Rotate Icon 180</a>
-                        <a href="javascript:void(0)" class="button [ ffab-before fa-shield ffab-rotate-270 ]">Rotate Icon 270</a>
-                        <a href="javascript:void(0)" class="button [ ffab-before fa-shield ffab-flip-horizontal ]">Rotate Icon Horizontal</a>
-                        <a href="javascript:void(0)" class="button [ ffab-before fa-shield ffab-flip-vertical ]">Rotate Icon Vertical</a>
+                        <a href="javascript:void(0)" class="button [ ffab fa-shield ]">Normal Icon</a>
+                        <a href="javascript:void(0)" class="button [ ffab fa-shield rotate-90 ]">Rotate Icon 90</a>
+                        <a href="javascript:void(0)" class="button [ ffab fa-shield rotate-180 ]">Rotate Icon 180</a>
+                        <a href="javascript:void(0)" class="button [ ffab fa-shield rotate-270 ]">Rotate Icon 270</a>
+                        <br>
+                        <a href="javascript:void(0)" class="button [ ffab fa-shield flip-horizontal ]">Flip Icon Horizontal</a>
+                        <a href="javascript:void(0)" class="button [ ffab fa-shield flip-vertical ]">Flip Icon Vertical</a>
                     </div>
                 </div>
             </section>
@@ -179,38 +218,62 @@
                 </pre>
                 <p>To initiate this project, load all required stylesheets in the following order:</p>
                 <pre>
-                <code>@import &#039;settings&#039;;
+<code>@charset &#039;utf-8&#039;;
+
+@import &#039;settings&#039;;
+
 @import &#039;foundation&#039;;
 @import &#039;font-awesome&#039;;
-@import &#039;foundation-font-awesome-buttons&#039;;
+@import &#039;ffab&#039;;
 
-@include foundation-everything;
-@include foundation-font-awesome-buttons;
-                    </code>
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-button-group;
+
+@include ffab-everything;
+</code>
                 </pre>
-                <p><strong>Important:</strong> Make sure all the Bower include files are imported using the appropriate paths.</p>
+                <p><strong>Important:</strong> Make sure all the Bower include files are imported using the appropriate paths. Here is a sample <code>GulpFile.js</code></p>
+                <pre><code class="hljs javascript">var gulp = require(&#39;gulp&#39;);
+var $    = require(&#39;gulp-load-plugins&#39;)();
+
+var sassPaths = [
+&#39;bower_components/foundation-sites/scss&#39;,
+&#39;bower_components/fontawesome/scss&#39;,
+&#39;bower_components/foundation-font-awesome-buttons/rc&#39;,
+];
+
+gulp.task(&#39;sass&#39;, function () {
+return gulp.src(&#39;scss/*.scss&#39;)
+.pipe($.sass({
+includePaths: sassPaths,
+})
+.on(&#39;error&#39;, $.sass.logError))
+.pipe($.autoprefixer({
+browsers: [&#39;last 2 versions&#39;, &#39;ie &gt;= 9&#39;],
+}))
+.pipe(gulp.dest(&#39;css&#39;));
+});
+
+gulp.task(&#39;default&#39;, [&#39;sass&#39;], function () {
+gulp.watch([&#39;scss/*.scss&#39;], [&#39;sass&#39;]);
+});</code></pre>
             </section>
             <section>
                 <h2>Customize with Sass</h2>
-                <p>Buttons can be easily customized using the following Sass variables:</p>
+                <p>FFAB buttons can be easily customized by adding the following Sass variables to your <code>_settings.scss</code> file used by Foundation:</p>
                 <pre>
-                    <code class="scss">// Foundation Font Awesome Buttons
-$ffab-css-prefix: &#039;ffab&#039;; // default: ffab
-$ffab-angle: 15; // degrees
-$ffab-animation-speed: .3s;
-$ffab-animation-behavior: cover; // options: cover or remove (default: remove)
-$ffab-border-radius: radius; // options: none, radius or round (default: none)
-$ffab-is-uppercase: true; // default false
-$ffab-has-shadow: true; // default false
-$ffab-shadow: 0 -3px 0 rgba(0, 0, 0, .1) inset;
+                    <code class="hljs scss">// 37. Foundation Font Awesome Buttons
+// - - - - - - - - - - - - - - - -
 $ffab-css-prefix: 'ffab';
+$ffab-default-position: 'after';
+$ffab-border-width: 0;
 $ffab-angle: 15;
-$ffab-animation-speed: .3s;
-$ffab-animation-behavior: 'remove';
-$ffab-overlay: rgba(255, 255, 255, .1);
-$ffab-has-shadow: true;
-$ffab-shadow-color: rgba(0, 0, 0, .1);
-$ffab-shadow-size: 10;
+$ffab-transition-speed: 0.3s;
+$ffab-transition-behavior: 'remove'; // @options 'remove', 'cover' or 'none'
+$ffab-overlay-background-color: rgba(255, 255, 255, .1);
                     </code>
                 </pre>
             </section>
@@ -224,6 +287,7 @@ $ffab-shadow-size: 10;
                     <li>Inspired by <a href="http://tympanus.net/Development/CreativeButtons/" target="_blank">Creative Button Styles ("Send Data" button in the yellow section)</a></li>
                     <li>Thanks to <a href="http://bower.io/" target="_blank">Bower</a>, <a href="http://sass-lang.com/" target="_blank">Sass</a>, <a href="https://highlightjs.org/" target="_blank">highlight.js</a> and <a href="https://pages.github.com/" target="_blank">Github Pages</a></li>
                 </ul>
+                <hr>
             </footer>
         </div>
     </div>

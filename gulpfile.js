@@ -5,7 +5,7 @@ var browserSync = require('browser-sync').create();
 var sassPaths = [
   'bower_components/foundation-sites/scss',
   'bower_components/fontawesome/scss',
-  'bower_components/foundation-font-awesome-buttons/scss'
+  'bower_components/foundation-font-awesome-buttons/src',
 ];
 
 gulp.task('sass', function() {
