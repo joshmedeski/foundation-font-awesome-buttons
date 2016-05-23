@@ -6,6 +6,7 @@
 @import 'ffab-functions';
 @import 'ffab-utilities';
 @import 'ffab-base';
+@import 'ffab-icon';
 @import 'ffab-overlay';
 @import 'ffab-transitions';
 @import 'ffab-positions';
@@ -13,11 +14,11 @@
 @mixin ffab-everything {
   @include ffab-transitions;
   @include ffab-utilities;
+  @include ffab-base;
+  @include ffab-icon;
   @include ffab-positions;
 
   .#{$ffab-css-prefix} {
-    @include ffab-base;
-    @include ffab-icon;
     @include ffab-overlay($ffab-border-width);
     @include ffab-transitions;
 
