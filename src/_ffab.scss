@@ -4,27 +4,25 @@
 
 @import 'ffab-variables';
 @import 'ffab-functions';
-@import 'ffab-utilities';
+
 @import 'ffab-base';
+@import 'ffab-bordered';
+@import 'ffab-hollow';
 @import 'ffab-icon';
 @import 'ffab-overlay';
+@import 'ffab-position';
 @import 'ffab-transitions';
-@import 'ffab-positions';
+@import 'ffab-utilities';
 
 @mixin ffab-everything {
-  @include ffab-transitions;
-  @include ffab-utilities;
   @include ffab-base;
   @include ffab-icon;
   @include ffab-positions;
+  @include ffab-overlay-default;
+  @include ffab-transitions;
 
-  .#{$ffab-css-prefix} {
-    @include ffab-overlay($ffab-border-width);
-    @include ffab-transitions;
+  @include ffab-utilities;
 
-    &.hollow,
-    &.bordered {
-      @include ffab-overlay(1px);
-    }
-  }
+  @include ffab-bordered;
+  @include ffab-hollow;
 }

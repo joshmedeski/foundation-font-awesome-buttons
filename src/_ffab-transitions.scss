@@ -5,10 +5,12 @@
 @mixin ffab-transition($behavior) {
   @if $behavior == 'cover' {
     transform: skewX(0deg) !important;
-    width: 112% !important;
+    width: 114% !important;
   } @else if $behavior == 'remove' {
     transform: skewX(0deg) !important;
     width: 0% !important;
+  } @else if $behavior == 'static' {
+    // Don't animate
   } @else {
     @warn "An valid transition behavior is required (cover or remove)";
   }

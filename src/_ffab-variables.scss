@@ -25,7 +25,7 @@ $ffab-transition-speed: 0.3s !default;
 
 /// Defines the default behavior of the :hover transition
 /// @type String
-/// @options 'remove', 'cover' or 'none'
+/// @options 'remove', 'cover' or 'static'
 $ffab-transition-behavior: 'remove' !default;
 
 /// Defines the background of the icon overlay

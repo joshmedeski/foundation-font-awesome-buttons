@@ -1,0 +1,9 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Bordered (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-bordered {
+  .#{$ffab-css-prefix}.bordered {
+    @include ffab-overlay(1px);
+  }
+}
