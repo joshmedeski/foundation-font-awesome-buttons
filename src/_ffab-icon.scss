@@ -1,0 +1,13 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Icon (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-icon {
+  .#{$ffab-css-prefix}::before {
+    @include fa-icon;
+    line-height: 1;
+    position: absolute;
+    transition: color inherit;
+    z-index: 2;
+  }
+}

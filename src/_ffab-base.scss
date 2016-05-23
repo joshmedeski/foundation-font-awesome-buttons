@@ -3,16 +3,9 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @mixin ffab-base {
-  overflow: hidden;
-  position: relative;
-}
-
-@mixin ffab-icon {
-  &::before {
-    @include fa-icon;
-    line-height: 1;
-    position: absolute;
+  .#{$ffab-css-prefix} {
+    overflow: hidden;
+    position: relative;
     transition: all $ffab-transition-speed;
-    z-index: 2;
   }
 }

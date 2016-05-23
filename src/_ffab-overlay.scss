@@ -2,15 +2,12 @@
 // Overlay (ffab)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-@mixin ffab-overlay-width($width: default) {
+@mixin ffab-overlay(
+  $border-width: $ffab-border-width,
+  $background: $ffab-overlay-background-color
+  ) {
   &::after {
-    width: ffab-width($width);
-  }
-}
-
-@mixin ffab-overlay($border-width: 0) {
-  &::after {
-    background-color: $ffab-overlay-background-color;
+    background-color: $background;
     border: $border-width solid currentColor;
     content: '';
     height: 110%;
@@ -19,5 +16,11 @@
     transition: all $ffab-transition-speed;
     width: ffab-width(default);
     z-index: 1;
+  }
+}
+
+@mixin ffab-overlay-default {
+  .#{$ffab-css-prefix} {
+    @include ffab-overlay;
   }
 }

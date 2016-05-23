@@ -1,16 +1,20 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// Positions (ffab)
+// Position (ffab)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-@mixin ffab-position($position, $size: default) {
+@mixin ffab-position($position: $ffab-default-position, $size: default) {
+  &::after {
+    width: ffab-width($size);
+  }
+
   @if $position == 'before' {
     padding-left: ffab-width($size);
 
-    &:before {
+    &::before {
       left: get-side($button-padding, left);
     }
 
-    &:after {
+    &::after {
       left: -#{$ffab-angle}px;
       transform: skewX(#{$ffab-angle}deg);
       transform-origin: left;
@@ -18,11 +22,11 @@
   } @else if $position == 'after' {
     padding-right: ffab-width($size);
 
-    &:before {
+    &::before {
       right: get-side($button-padding, right);
     }
 
-    &:after {
+    &::after {
       right: -#{$ffab-angle}px;
       transform: skewX(-#{$ffab-angle}deg);
       transform-origin: right;
@@ -32,6 +36,11 @@
 
 // Classes
 @mixin ffab-positions {
+  // Without position class
+  .#{$ffab-css-prefix}:not(.before):not(.after) {
+    @include ffab-position;
+  }
+
   .#{$ffab-css-prefix}.after {
     @include ffab-position('after');
   }
@@ -40,23 +49,19 @@
     @include ffab-position('before');
   }
 
-  .#{$ffab-css-prefix}:not(.before):not(.after) {
-    @include ffab-position($ffab-default-position);
-  }
-
   @each $size, $value in $button-sizes {
     @if $size != default {
-      &.#{$size}:not(.before):not(.after) {
+      // Without position class
+      .#{$ffab-css-prefix}.#{$size}:not(.before):not(.after) {
         @include ffab-position($ffab-default-position, $size);
-        @include ffab-overlay-width($size);
       }
-      &.#{$size}.after {
+
+      .#{$ffab-css-prefix}.#{$size}.after {
         @include ffab-position('after', $size);
-        @include ffab-overlay-width($size);
       }
-      &.#{$size}.before {
+
+      .#{$ffab-css-prefix}.#{$size}.before {
         @include ffab-position('before', $size);
-        @include ffab-overlay-width($size);
       }
     }
   }

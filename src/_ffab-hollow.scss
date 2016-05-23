@@ -1,0 +1,17 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Hollow (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin ffab-hollow {
+  .#{$ffab-css-prefix}.hollow {
+    @include ffab-overlay(1px, transparent);
+    &.static::after {
+      transition: border-color 0.25s ease-out;
+    }
+    @if ($ffab-transition-behavior == 'static') {
+      &::after {
+        transition: border-color 0.25s ease-out;
+      }
+    }
+  }
+}
