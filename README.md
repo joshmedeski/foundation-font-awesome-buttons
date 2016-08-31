@@ -59,7 +59,7 @@ var $    = require('gulp-load-plugins')();
 var sassPaths = [
   'bower_components/foundation-sites/scss',
   'bower_components/fontawesome/scss',
-  'bower_components/foundation-font-awesome-buttons/rc',
+  'bower_components/foundation-font-awesome-buttons/src',
 ];
 
 gulp.task('sass', function () {
