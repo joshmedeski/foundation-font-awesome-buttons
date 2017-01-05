@@ -1,0 +1,24 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Hover / Active State (ffab)
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$ffab-has-hover-active-state: true !default;
+$ffab-hover-active-transition-speed: 150ms !default;
+$ffab-hover-value: -1px !default;
+$ffab-active-value: 1px !default;
+
+@mixin ffab-hover-active {
+  @if $ffab-has-hover-active-state {
+    .button:not(.disabled):not(.no-hover-active) {
+      transition: transform $ffab-hover-active-transition-speed;
+
+      &:hover {
+        transform: translateY($ffab-hover-value);
+      }
+
+      &:active {
+        transform: translateY($ffab-active-value);
+      }
+    }
+  }
+}
