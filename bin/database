@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
+PROD_DB_HOST=stdcheck.com
+PROD_DB_NAME=std1314009280218
+
+CONTAINER_NAME=stdcheck
+
+DEV_DB_HOST=db
+DEV_DB_NAME=wordpress
+
+: ${DEV_DB_USER:="root"};
+: ${DEV_DB_PASS:="root"};
+
+HELP_IMPORT_PRODUCTION_WORDPRESS="Imports the $PROD_DB_NAME database from $PROD_DB_HOST into $DEV_DB_NAME"
+
+# @see HELP_IMPORT_PRODUCTION_WORDPRESS
+import-production-wordpress() {
+    echo "Please enter the username for the production server, followed by [ENTER]: "
+    read PROD_DB_USER
+
+    echo "Please enter the password for the production server, followed by [ENTER]: "
+    read -s PROD_DB_PASS
+
+    echo "=> Resetting $DEV_DB_NAME database in container..."
+    mysql -u$DEV_DB_USER -p$DEV_DB_PASS -e "DROP DATABASE IF EXISTS $DEV_DB_NAME"
+    mysql -u$DEV_DB_USER -p$DEV_DB_PASS -e "CREATE DATABASE $DEV_DB_NAME"
+
+    echo "=> Importing $PROD_DB_NAME database from $PROD_DB_HOST into $DEV_DB_NAME..."
+    mysqldump -u$PROD_DB_USER -p$PROD_DB_PASS -h$PROD_DB_HOST --compress $PROD_DB_NAME | \
+        sed 's/^Warning: Using a password on the command line interface can be insecure.//g' | \
+        mysql -h${DEV_DB_HOST} -u$DEV_DB_USER -p$DEV_DB_PASS $DEV_DB_NAME
+
+    echo "=> All Done!"
+}
+
+# Prints usage information for the script in general, or a specific command
+help() {
+    case "$1" in
+        import-production-wordpress)
+            cat << EOF
+Usage: $0 import-production-wordpress
+
+$HELP_IMPORT_PRODUCTION_WORDPRESS
+EOF
+            ;;
+        *)
+            cat << EOF
+Usage: $0 [OPTIONS] COMMAND
+
+Options:
+
+ -h, --help     Print usage
+
+Commands:
+ import-production-wordpress     $HELP_IMPORT_PRODUCTION_WORDPRESS
+
+Run '$0 --help COMMAND' for more information on a command
+EOF
+            ;;
+    esac
+}
+
+# main case statement
+case "$1" in
+    import-production-wordpress)
+        import-production-wordpress
+        ;;
+    -h | --help)
+        help $2
+        ;;
+    *)
+        help
+        exit 1;
+        ;;
+esac

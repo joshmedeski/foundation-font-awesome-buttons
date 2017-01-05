@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT="$(cd "${DIR}"/../ && pwd)"
+
+. "${DIR}"/lib/image_settings.sh
+
+ACCOUNT=chekote
+REPO=gulp
+VERSION=3.9.1-node${NODE_VERSION}
+
+. "${DIR}"/lib/args.sh
+. "${DIR}"/lib/rm.sh
+. "${DIR}"/lib/tty.sh
+
+COMMAND="echo pid1 > /dev/null && gulp $ARGS"
+
+docker run -i${TTY} -v $(pwd):/data ${RM} ${ACCOUNT}/${REPO}:${VERSION} "${COMMAND}"
