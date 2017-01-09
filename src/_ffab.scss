@@ -5,10 +5,10 @@
 @import 'ffab-variables';
 @import 'ffab-functions';
 
+@import 'ffab-active';
 @import 'ffab-base';
 @import 'ffab-bordered';
 @import 'ffab-hollow';
-@import 'ffab-active';
 @import 'ffab-icon';
 @import 'ffab-overlay';
 @import 'ffab-position';
@@ -16,11 +16,11 @@
 @import 'ffab-utilities';
 
 @mixin ffab-everything {
-  @include ffab-base;
   @include ffab-active;
+  @include ffab-base;
   @include ffab-icon;
-  @include ffab-positions;
   @include ffab-overlay-default;
+  @include ffab-positions;
   @include ffab-transitions;
 
   @include ffab-utilities;
