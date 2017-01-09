@@ -94,10 +94,9 @@ There are a set of Sass variables that can help make these buttons your own. I r
 // $ffab-transition-speed: 0.3s;
 // $ffab-transition-behavior: 'remove'; // @options 'remove', 'cover' or 'none'
 // $ffab-overlay-background-color: rgba(255, 255, 255, .1);
-// $ffab-has-hover-active-state: true;
-// $ffab-hover-active-transition-speed: 150ms;
-// $ffab-hover-value: -1px;
-// $ffab-active-value: 1px;
+// $ffab-has-active-state: true !default;
+// $ffab-active-transition-speed: 200ms !default;
+// $ffab-active-value: 3px !default;
 ```
 
 ## TODO

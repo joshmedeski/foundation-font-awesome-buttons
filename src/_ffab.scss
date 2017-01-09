@@ -8,7 +8,7 @@
 @import 'ffab-base';
 @import 'ffab-bordered';
 @import 'ffab-hollow';
-@import 'ffab-hover-active';
+@import 'ffab-active';
 @import 'ffab-icon';
 @import 'ffab-overlay';
 @import 'ffab-position';
@@ -17,7 +17,7 @@
 
 @mixin ffab-everything {
   @include ffab-base;
-  @include ffab-hover-active;
+  @include ffab-active;
   @include ffab-icon;
   @include ffab-positions;
   @include ffab-overlay-default;
