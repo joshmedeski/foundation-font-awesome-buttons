@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT="$(cd "${DIR}"/../ && pwd)"
+
+. "${DIR}"/lib/image_settings.sh
+
+ACCOUNT=chekote
+REPO=bower
+VERSION=1.7.9-node${NODE_VERSION}
+
+. "${DIR}"/lib/args.sh
+. "${DIR}"/lib/rm.sh
+. "${DIR}"/lib/tty.sh
+
+COMMAND="echo pid1 > /dev/null && bower $ARGS"
+
+docker run -i${TTY} ${RM} \
+    -v ~/.ssh:/home/bower/.ssh \
+    -v ~/.gitconfig:/home/bower/.gitconfig \
+    -v $(pwd):/data \
+    ${ACCOUNT}/${REPO}:${VERSION} "${COMMAND}"
