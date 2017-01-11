@@ -8,7 +8,7 @@ $ffab-active-value: 3px !default;
 
 @mixin ffab-active {
   @if $ffab-has-active-state {
-    .ffab:not(.disabled):not(.no-hover-active) {
+    .ffab:not(.disabled):not(.no-active) {
       &::before {
         transition: transform $ffab-active-transition-speed;
       }
