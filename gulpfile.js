@@ -10,11 +10,11 @@ var sassPaths = [
 gulp.task('sass', function () {
   return gulp.src(['preview/*.scss', 'src/*.scss'])
     .pipe($.sass({
-      includePaths: sassPaths,
+      includePaths: sassPaths
     })
     .on('error', $.sass.logError))
     .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie >= 9'],
+      browsers: ['last 2 versions', 'ie >= 9']
     }))
     .pipe(gulp.dest('css'));
 });

@@ -24,8 +24,8 @@
     "scss"
   ],
   "dependencies": {
-    "foundation-sites": "6.2.x",
-    "fontawesome": "4.6.x"
+    "foundation-sites": "6.3.x",
+    "fontawesome": "4.7.x"
   },
   "license": "MIT",
   "homepage": "https://github.com/joshmedeski/foundation-font-awesome-buttons"
