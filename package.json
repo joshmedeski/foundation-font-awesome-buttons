@@ -1,6 +1,6 @@
 {
   "name": "foundation-font-awesome-buttons",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "Font Awesome support for Foundation buttons",
   "main": "gulpfile.js",
   "scripts": {
