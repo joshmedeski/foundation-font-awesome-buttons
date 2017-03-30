@@ -1,0 +1,77 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.8
+3 info using node@v7.0.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/data',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /root/.npm/foundation-font-awesome-buttons/3.3.1/package.tgz not in flight; packing
+9 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+10 info lifecycle foundation-font-awesome-buttons@3.3.1~prepublish: foundation-font-awesome-buttons@3.3.1
+11 silly lifecycle foundation-font-awesome-buttons@3.3.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/root/.npm/foundation-font-awesome-buttons/3.3.1/package.tgz',
+12 verbose tar pack   '/data' ]
+13 verbose tarball /root/.npm/foundation-font-awesome-buttons/3.3.1/package.tgz
+14 verbose folder /data
+15 verbose addLocalTarball adding from inside cache /root/.npm/foundation-font-awesome-buttons/3.3.1/package.tgz
+16 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd foundation-font-awesome-buttons@3.3.1
+18 verbose afterAdd /root/.npm/foundation-font-awesome-buttons/3.3.1/package/package.json not in flight; writing
+19 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /root/.npm/foundation-font-awesome-buttons/3.3.1/package/package.json written
+21 silly publish { name: 'foundation-font-awesome-buttons',
+21 silly publish   version: '3.3.1',
+21 silly publish   description: 'Font Awesome support for Foundation buttons',
+21 silly publish   main: 'gulpfile.js',
+21 silly publish   scripts: { start: 'gulp', build: 'gulp sass' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/zurb/foundation-sites-template.git' },
+21 silly publish   bugs: { url: 'https://github.com/zurb/foundation-sites/issues' },
+21 silly publish   author: { name: 'Josh Medeski', email: 'josh.medeski@gmail.com' },
+21 silly publish   license: 'MIT',
+21 silly publish   private: true,
+21 silly publish   devDependencies:
+21 silly publish    { gulp: '^3.9.0',
+21 silly publish      'gulp-autoprefixer': '^3.1.0',
+21 silly publish      'gulp-load-plugins': '^1.1.0',
+21 silly publish      'gulp-sass': '^2.1.0' },
+21 silly publish   dependencies: { 'foundation-sites': '^6.3.1' },
+21 silly publish   readme: '# Foundation Font Awesome Buttons\n![Foundation Version Supported Version](https://img.shields.io/badge/Foundation_For_Sites-v6.3.x-blue.svg?style=flat-square)\n![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v4.7.x-green.svg?style=flat-square)\n\nFoundation Icon Buttons combines the Zurb\'s Foundation with the Font Awesome project. Building stylish icon buttons is quick and easy.\n\n![Button Preview](https://raw.githubusercontent.com/joshmedeski/foundation-font-awesome-buttons/master/ffab-preview.png)\n\n## How to Use\n\nIt\'s simple! Just add `ffab` and a Font Awesome class to a button\n\n```html\n<a href="#" class="button ffab fa-arrow-right">Text</a>\n```\n\n[View Docs & Examples](http://joshmedeski.github.io/foundation-font-awesome-buttons//)\n\n## Setup\n\n#### 1. Install the Bower component\n\nRun the following command in the root folder of your project:\n\n```bash\n$ bower install foundation-font-awesome-buttons --save-dev\n```\n\n#### 2. Include in Sass\n\nImport all the project dependencies in your main Sass file:\n\n```scss\n@charset \'utf-8\';\n\n@import \'settings\';\n\n@import \'foundation\';\n@import \'font-awesome\';\n@import \'ffab\';\n\n@include foundation-global-styles;\n@include foundation-grid;\n@include foundation-typography;\n@include foundation-button;\n@include foundation-button-group;\n\n@include ffab-everything;\n```\n\nMake sure your Sass compiler knows where to find all the dependencies.\n\nHere is an example of a GulpFile.js setup using the `Gulp-Sass` `includePaths` option:\n\n```js\nvar gulp = require(\'gulp\');\nvar $    = require(\'gulp-load-plugins\')();\n\nvar sassPaths = [\n  \'bower_components/foundation-sites/scss\',\n  \'bower_components/fontawesome/scss\',\n  \'bower_components/foundation-font-awesome-buttons/src\',\n];\n\ngulp.task(\'sass\', function () {\n  return gulp.src(\'scss/*.scss\')\n    .pipe($.sass({\n      includePaths: sassPaths,\n    })\n    .on(\'error\', $.sass.logError))\n    .pipe($.autoprefixer({\n      browsers: [\'last 2 versions\', \'ie >= 9\'],\n    }))\n    .pipe(gulp.dest(\'css\'));\n});\n\ngulp.task(\'default\', [\'sass\'], function () {\n  gulp.watch([\'scss/*.scss\'], [\'sass\']);\n});\n```\n\n\n## Settings\n\nThere are a set of Sass variables that can help make these buttons your own. I recommend adding the following variables to your project\'s `_settings.scss` file (to follow the Foundation workflow).\n\n```scss\n// 37. Foundation Font Awesome Buttons\n// - - - - - - - - - - - - - - - -\n// $ffab-css-prefix: \'ffab\';\n// $ffab-default-position: \'after\';\n// $ffab-border-width: 0;\n// $ffab-angle: 15;\n// $ffab-transition-speed: 0.3s;\n// $ffab-transition-behavior: \'remove\'; // @options \'remove\', \'cover\' or \'none\'\n// $ffab-overlay-background-color: rgba(255, 255, 255, .1);\n// $ffab-has-active-state: true !default;\n// $ffab-active-transition-speed: 200ms !default;\n// $ffab-active-value: 3px !default;\n```\n\n## TODO\n\n- [ ] Update documentation with new class names and more examples\n- [ ] Add SassDocs to the entire project\n- [ ] Create a CDN CSS to easily add ffab to any project (without Sass!)\n- [ ] Create a rounded version\n- [ ] Remove background color from hollow buttons\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '9016d04d1d975ab05ac1cacad3d3ec07630eb9ee',
+21 silly publish   homepage: 'https://github.com/zurb/foundation-sites-template#readme',
+21 silly publish   _id: 'foundation-font-awesome-buttons@3.3.1',
+21 silly publish   _shasum: '3a67871070d62ae8c750a48a0443797b712597a4',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 verbose stack Error: This package has been marked as private
+23 verbose stack Remove the 'private' field from the package.json to publish it.
+23 verbose stack     at publish_ (/usr/local/lib/node_modules/npm/lib/publish.js:101:15)
+23 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+23 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+23 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+23 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+23 verbose stack     at /usr/local/lib/node_modules/npm/lib/publish.js:73:5
+23 verbose stack     at RES (/usr/local/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+23 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:25:25)
+23 verbose stack     at /usr/local/lib/node_modules/npm/lib/cache.js:363:16
+23 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/write-file-atomic/index.js:50:11
+24 verbose cwd /data
+25 error Linux 4.9.8-moby
+26 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+27 error node v7.0.0
+28 error npm  v3.10.8
+29 error This package has been marked as private
+29 error Remove the 'private' field from the package.json to publish it.
+30 error If you need help, you may report this error at:
+30 error     <https://github.com/npm/npm/issues>
+31 verbose exit [ 1, true ]
