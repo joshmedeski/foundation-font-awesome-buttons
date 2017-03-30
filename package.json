@@ -16,7 +16,6 @@
   },
   "author": "Josh Medeski <josh.medeski@gmail.com>",
   "license": "MIT",
-  "private": true,
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
