@@ -1,10 +1,15 @@
 @charset 'utf-8';
 
-@import 'settings';
-$fa-font-path: '../bower_components/fontawesome/fonts/';
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
 
+@import 'settings';
 @import 'foundation';
-@import 'font-awesome';
+
+@import 'fontawesome';
+@import 'regular';
+@import 'solid';
+@import 'brands';
+
 @import 'ffab';
 
 @include foundation-global-styles;
