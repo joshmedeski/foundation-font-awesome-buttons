@@ -1,10 +1,11 @@
 var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
-  'bower_components/foundation-sites/scss',
-  'bower_components/fontawesome/scss',
-  'src',
+  'node_modules/foundation-sites/scss',
+  'node_modules/@fortawesome/fontawesome-free/scss',
+  'src'
 ];
 
 gulp.task('sass', function () {
@@ -16,10 +17,18 @@ gulp.task('sass', function () {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['sass'], function () {
-  gulp.watch(['preview/*.scss'], ['sass']);
-  gulp.watch(['src/*.scss'], ['sass']);
+gulp.task('serve', ['sass'], function() {
+  browserSync.init({
+    server: { baseDir: "./" }
+  });
+
+  gulp.watch('**/*.scss', ['sass']);
+  gulp.watch("**/*.html").on('change', browserSync.reload);
 });
+
+
+gulp.task('default', ['sass', 'serve'], function () { });

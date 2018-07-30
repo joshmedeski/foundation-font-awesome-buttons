@@ -3,11 +3,42 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @mixin ffab-icon {
+  .#{$ffab-css-prefix},
+  .#{$ffab-css-prefix}s,
+  .#{$ffab-css-prefix}b,
+  .#{$ffab-css-prefix}r,
+  .#{$ffab-css-prefix}l {
+    &::before {
+      @include fa-icon;
+      line-height: 1;
+      position: absolute;
+      transition: color inherit;
+      z-index: 2;
+      margin-top: 0.08rem;
+    }
+  }
+
   .#{$ffab-css-prefix}::before {
-    @include fa-icon;
-    line-height: 1;
-    position: absolute;
-    transition: color inherit;
-    z-index: 2;
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900;
+  }
+
+  .#{$ffab-css-prefix}s::before {
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900;
+  }
+
+  .#{$ffab-css-prefix}b::before {
+    font-family: 'Font Awesome 5 Brands' !important;
+  }
+
+  .#{$ffab-css-prefix}r::before {
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 400;
+  }
+
+  .#{$ffab-css-prefix}l::before {
+    font-family: 'Font Awesome 5 Light' !important;
+    font-weight: 300;
   }
 }

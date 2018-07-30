@@ -1,10 +1,10 @@
 # Foundation Font Awesome Buttons
-![Foundation Version Supported Version](https://img.shields.io/badge/Foundation_For_Sites-v6.3.x-blue.svg?style=flat-square)
-![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v4.7.x-green.svg?style=flat-square)
+![Foundation Version Supported Version](https://img.shields.io/badge/Foundation_For_Sites-v6.4.x-blue.svg?style=flat-square)
+![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v5.2.x-green.svg?style=flat-square)
 
 Foundation Icon Buttons combines the Zurb's Foundation with the Font Awesome project. Building stylish icon buttons is quick and easy.
 
-![Button Preview](https://raw.githubusercontent.com/joshmedeski/foundation-font-awesome-buttons/master/ffab-preview.png)
+![Button Preview](https://raw.githubusercontent.com/joshmedeski/foundation-font-awesome-buttons/master/ffab-preview.jpg)
 
 ## How to Use
 
@@ -14,7 +14,7 @@ It's simple! Just add `ffab` and a Font Awesome class to a button
 <a href="#" class="button ffab fa-arrow-right">Text</a>
 ```
 
-[View Docs & Examples](http://joshmedeski.github.io/foundation-font-awesome-buttons//)
+[View Docs & Examples](http://joshmedeski.github.io/foundation-font-awesome-buttons/)
 
 ## Setup
 
@@ -57,9 +57,9 @@ var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
-  'bower_components/foundation-sites/scss',
-  'bower_components/fontawesome/scss',
-  'bower_components/foundation-font-awesome-buttons/src',
+  'node_modules/foundation-sites/scss',
+  'node_modules/@fortawesome/fontawesome-free/scss',
+  'node_modules/foundation-font-awesome-buttons/src',
 ];
 
 gulp.task('sass', function () {
