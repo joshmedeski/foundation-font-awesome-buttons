@@ -1,9 +1,11 @@
+@use "strip-unit";
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Functions (ffab)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @function strip-units($number) {
-  @return $number / ($number * 0 + 1);
+  @return strip-unit.strip($number);
 }
 
 @function ffab-add($first, $second) {

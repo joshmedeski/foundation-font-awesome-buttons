@@ -14,25 +14,25 @@
 
 @mixin ffab-utilities-transform {
   .#{$ffab-css-prefix}.rotate-90::before {
-    @include fa-icon-rotate(90deg, 1)
+    @extend .fa-rotate-90;
   }
 
   .#{$ffab-css-prefix}.rotate-180::before {
-    @include fa-icon-rotate(180deg, 2);
+    @extend .fa-rotate-180;
   }
 
   .#{$ffab-css-prefix}.rotate-270::before {
-    @include fa-icon-rotate(270deg, 3);
+    @extend .fa-rotate-270;
   }
 }
 
 @mixin ffab-utilities-flip {
   .#{$ffab-css-prefix}.flip-horizontal::before {
-    @include fa-icon-flip(-1, 1, 0);
+    @extend .fa-flip-horizontal;
   }
 
   .#{$ffab-css-prefix}.flip-vertical::before {
-    @include fa-icon-flip(1, -1, 2);
+    @extend .fa-flip-vertical;
   }
 }
 
