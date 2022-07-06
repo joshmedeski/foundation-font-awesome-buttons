@@ -1,9 +1,11 @@
+@use 'strip-unit';
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Functions (ffab)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @function strip-units($number) {
-  @return $number / ($number * 0 + 1);
+  @return strip-unit.strip($number);
 }
 
 @function ffab-add($first, $second) {
@@ -11,5 +13,6 @@
 }
 
 @function ffab-width($size) {
-  @return strip-units(rem-calc($ffab-angle)) + strip-units(map-get($button-sizes, $size) * 3) + rem;
+  @return strip-units(rem-calc($ffab-angle)) +
+    strip-units(map-get($button-sizes, $size) * 3) + rem;
 }

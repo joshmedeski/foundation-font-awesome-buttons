@@ -1,34 +1,40 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
-var $    = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')();
+var sass = require('gulp-sass')(require('sass'));
 
 var sassPaths = [
   'node_modules/foundation-sites/scss',
   'node_modules/@fortawesome/fontawesome-free/scss',
-  'src'
+  'node_modules/@sass-collective',
+  'src',
 ];
 
-gulp.task('sass', function () {
-  return gulp.src(['preview/*.scss', 'src/*.scss'])
-    .pipe($.sass({
-      includePaths: sassPaths
-    })
-    .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie >= 9']
-    }))
+var sassTask = function () {
+  return gulp
+    .src(['preview/*.scss', 'src/*.scss'])
+    .pipe(
+      sass({
+        includePaths: sassPaths,
+      }).on('error', sass.logError)
+    )
+    .pipe($.autoprefixer())
     .pipe(gulp.dest('css'))
     .pipe(browserSync.stream());
-});
+};
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('sass', sassTask);
+
+gulp.task('watch', function () {
   browserSync.init({
-    server: { baseDir: "./" }
+    server: { baseDir: './' },
   });
-
-  gulp.watch('**/*.scss', ['sass']);
-  gulp.watch("**/*.html").on('change', browserSync.reload);
+  gulp.watch('**/*.scss', sassTask);
+  gulp.watch('**/*.html').on('change', browserSync.reload);
 });
 
+var serveTask = gulp.series('sass', 'watch');
 
-gulp.task('default', ['sass', 'serve'], function () { });
+gulp.task('serve', serveTask);
+
+gulp.task('default', serveTask);

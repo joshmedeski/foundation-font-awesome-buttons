@@ -5,7 +5,7 @@
 @mixin ffab-overlay(
   $border-width: $ffab-border-width,
   $background: $ffab-overlay-background-color
-  ) {
+) {
   &::after {
     background-color: $background;
     border: $border-width solid currentColor;
