@@ -1,15 +1,28 @@
 {
   "name": "foundation-font-awesome-buttons",
-  "version": "6.0.0",
   "description": "Font Awesome support for Foundation buttons",
+  "version": "6.0.0",
   "main": "gulpfile.js",
-  "engines": {
-    "node": ">=12"
-  },
   "scripts": {
     "start": "gulp",
     "build": "gulp sass"
   },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@sass-collective/strip-unit": "^3.1.2",
+    "foundation-sites": "^6.4.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-sass": "^5.1.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.52.2"
+  },
+  "author": "Josh Medeski <josh.medeski@gmail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/zurb/foundation-sites-template.git"
@@ -17,22 +30,10 @@
   "bugs": {
     "url": "https://github.com/zurb/foundation-sites/issues"
   },
-  "author": "Josh Medeski <josh.medeski@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "browser-sync": "^2.27.10",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-load-plugins": "^2.0.7",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.52.2"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.1.1",
-    "@sass-collective/strip-unit": "^3.1.2",
-    "foundation-sites": "^6.4.3"
-  },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "engines": {
+    "node": ">=14"
+  }
 }

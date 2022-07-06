@@ -1,4 +1,4 @@
-@use "strip-unit";
+@use 'strip-unit';
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Functions (ffab)
@@ -13,5 +13,6 @@
 }
 
 @function ffab-width($size) {
-  @return strip-units(rem-calc($ffab-angle)) + strip-units(map-get($button-sizes, $size) * 3) + rem;
+  @return strip-units(rem-calc($ffab-angle)) +
+    strip-units(map-get($button-sizes, $size) * 3) + rem;
 }

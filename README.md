@@ -1,4 +1,5 @@
 # Foundation Font Awesome Buttons
+
 ![Foundation Version Supported Version](https://img.shields.io/badge/Foundation_For_Sites-v6.4.x-blue.svg?style=flat-square)
 ![Font Awesome Supported Version](https://img.shields.io/badge/Font_Awesome-v6.1.x-green.svg?style=flat-square)
 
@@ -54,7 +55,7 @@ Here is an example of a GulpFile.js setup using the `Gulp-Sass` `includePaths` o
 
 ```js
 var gulp = require('gulp');
-var $    = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')();
 
 var sassPaths = [
   'node_modules/foundation-sites/scss',
@@ -63,14 +64,18 @@ var sassPaths = [
 ];
 
 gulp.task('sass', function () {
-  return gulp.src('scss/*.scss')
-    .pipe($.sass({
-      includePaths: sassPaths,
-    })
-    .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie >= 9'],
-    }))
+  return gulp
+    .src('scss/*.scss')
+    .pipe(
+      $.sass({
+        includePaths: sassPaths,
+      }).on('error', $.sass.logError)
+    )
+    .pipe(
+      $.autoprefixer({
+        browsers: ['last 2 versions', 'ie >= 9'],
+      })
+    )
     .pipe(gulp.dest('css'));
 });
 
@@ -78,7 +83,6 @@ gulp.task('default', ['sass'], function () {
   gulp.watch(['scss/*.scss'], ['sass']);
 });
 ```
-
 
 ## Settings
 
